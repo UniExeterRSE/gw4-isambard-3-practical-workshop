@@ -3,7 +3,7 @@
 - **Date:** Tuesday 21 April 2026, 10:00am–12:30pm
 - **Location:** Artificial Intelligence (AI) Arena, SWIoT, Exeter
 - **Capacity:** 40 attendees
-- **Audience:** New and intermediate HPC users wanting practical guidance on GW4 Isambard 3
+- **Audience:** New, beginner, and intermediate HPC users wanting practical guidance on GW4 Isambard 3
 
 This workshop follows the HPC Showcase on 20 April.
 
@@ -15,9 +15,10 @@ Core design principles:
 
 - Keep the core path accessible to genuine beginners.
 - Preserve stretch goals for faster and more experienced attendees.
-- Prioritise login, Slurm, debugging, and practical software setup over broad coverage.
+- Prioritise login, first-job workflows, parallelism patterns for serial work, debugging, and practical software setup over broad coverage.
 - Avoid going deep on participants' own custom software stacks during the session.
 - Treat anything outside the prepared exercises as follow-up support rather than in-room troubleshooting.
+- Assume attendee access will have been prepared in advance by the BriCS team, while keeping a lightweight passive follow-along fallback in reserve.
 
 ## Schedule
 
@@ -38,6 +39,10 @@ Core design principles:
 
 Login and the overview run in parallel: attendees begin the Clifton login process (`clifton auth`, then `ssh`) while the presenter gives a lightweight system overview and helpers circulate.
 
+Planning assumption: dedicated workshop access will already have been prepared for participants by the BriCS team. The onboarding flow should therefore be designed as a normal active start to the workshop, not as a high-risk access triage exercise.
+
+Default editor path for the workshop: use VS Code via the browser-based tunnel workflow described in the BriCS documentation. Treat this as the standard taught route so participants are all following the same setup unless they deliberately choose an alternative editor.
+
 Keep the system overview deliberately light:
 
 - what Isambard 3 is
@@ -49,6 +54,8 @@ Keep the system overview deliberately light:
 Do **not** spend long here on architecture-specific software discussion. Keep that for the software section when it is directly relevant.
 
 Slides should stay low-demand: large diagrams, minimal text, clear signposting.
+
+Keep a passive follow-along contingency in reserve for the small number of attendees who might still hit an access problem on the day, but treat this as unlikely rather than the expected path.
 
 ### 2. Login Checkpoint + First Commands (10 min)
 
@@ -77,6 +84,10 @@ Also remind attendees:
 - storage is working storage, not archival
 - scratch is temporary
 - filling `$HOME` can cause avoidable problems
+
+Do **not** spend workshop time on the portal beyond whatever is strictly necessary for account setup before the event. For many attendees it will add little value because they may not yet have a project, and even those who do are likely to have only one.
+
+Include a short signpost that the workshop editing workflow will follow the BriCS VS Code tunnel guide: participants should have the VS Code CLI available, will authenticate through GitHub, and will connect to the remote session through a web browser. Participants who prefer another editor, including desktop VS Code, can use it instead but should bring it set up in advance.
 
 ### 3. First Batch Job — Slurm (25 min)
 
@@ -141,6 +152,8 @@ This section should help attendees understand the decision order:
 - first try modules
 - if not available, use the prepared user-managed environment route
 - if that becomes bespoke and messy, take it offline and point them to support/docs
+
+Keep VS Code and other remote-development tooling out of the taught path for this session. If raised in Q&A, answer briefly and move on.
 
 ### 6. Python Example + Array Jobs + Parallelism Strategies (25 min)
 
@@ -220,13 +233,12 @@ Suggested contents:
 - file transfer one-liners: `scp`, `rsync`
 - where to look next in the docs
 - support route
-- workshop Slack / channel for community follow-up
 - feedback QR code
 - open Q&A
 
 Important distinction to make clear:
 
-- Slack/community follow-up can be useful for workshop continuity
+- workshop questions after the session can be redirected to the relevant docs/help route
 - official BriCS support issues should go through the helpdesk
 
 ## Pre-Workshop Email
@@ -236,17 +248,22 @@ Send on Thursday before the event.
 Ask attendees to:
 
 - set their UNIX short name via the portal
+- create a GitHub account if they do not already have one
 - check they have an SSH key pair (or generate one)
-- optionally install Clifton ahead of time
+- install Clifton ahead of time if possible
+- install the VS Code CLI ahead of time if possible
+- expect the taught editing path to use VS Code in a web browser
+- bring their own preferred text editor set up in advance if they do not want to use the browser-based VS Code route
 - bring a laptop that can open a terminal and a web browser
 
-Keep this optional/preparatory rather than a hard gate.
+Keep this preparatory rather than a hard gate, but make the message stronger than optional: the more of this is done before the event, the smoother the hands-on start will be.
 
 ## Workshop Material Design Notes
 
 ### Prepared materials to create
 
 - slide deck
+- onboarding/run-of-show notes for presenter and helpers
 - first Slurm job script
 - multi-task Slurm job script
 - Monte Carlo Pi Python script
@@ -267,23 +284,21 @@ Keep this optional/preparatory rather than a hard gate.
 - [ ] Array job version of the Python example
 - [ ] GNU Parallel example or confirm whether to keep it conceptual only
 - [ ] Stretch goals for each hands-on section
-- [ ] Slack channel (GW4 Isambard) + group + QR code / join link
 - [ ] Confirm module names used in exercises
 - [ ] Confirm project ID format shown in examples
 - [ ] Confirm path for workshop materials
-- [ ] Account provisioning plan (majority of registrants do not yet have access)
+- [ ] Confirm workshop account provisioning timeline with BriCS
 - [ ] Final room/helper plan for login support
 
 ## Notes
 
 - **No JupyterHub on Isambard 3** — keep portal/JupyterHub content out of scope for this session.
 - **Do not plan around persistent login sessions** — long-running work should live in Slurm jobs, not on login nodes.
-- **Audience skews intermediate** — keep the core route beginner-safe, but preserve stretch goals.
+- **Audience is mixed but novice-leaning** — keep the core route beginner-safe, but preserve stretch goals.
 - **Debugging is high demand** — this is why it has a dedicated section and should not be squeezed.
 - **System architecture is also high demand** — include it, but keep it lightweight and relevant.
 - **Biomedical sciences are well represented** — use examples like image processing, parameter sweeps, and many-small-job workflows where useful.
-- **Fallback for anyone who cannot log in:** follow along on the projector.
-- **Slack is for workshop continuity; official BriCS support is via helpdesk.**
+- **Fallback for anyone who cannot log in:** follow along on the projector. This should be available, but is unlikely to be needed often.
 
 ## Out of Scope for this workshop
 
