@@ -124,7 +124,7 @@ Send ~1 week before. Ask attendees to:
 - [ ] GNU Parallel example job script
 - [ ] Monte Carlo Pi Python script
 - [ ] Stretch goals for each hands-on section
-- [ ] Slack channel + QR code / join link
+- [ ] Slack channel (GW4 Isambard) + group + QR code / join link
 - [ ] Prepare all materials
 - [ ] Confirm partition names, module names, project ID format
 - [ ] Account provisioning plan (majority of registrants don't have access yet)
