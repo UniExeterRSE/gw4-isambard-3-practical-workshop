@@ -1,0 +1,56 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=69", "wheel"]
+
+[project]
+name = "isambard3-workshop"
+version = "0.1.0"
+description = "Workshop materials and example scripts for the GW4 Isambard 3 practical workshop."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=2,<3",
+    "numba>=0.61,<0.62",
+    "mpi4py>=4,<5",
+    "jupytext>=1.18.1,<2",
+]
+
+[project.scripts]
+monte-carlo-pi-pure-python = "section_06_python_array_jobs_parallelism_strategies.monte_carlo_pi_pure_python:main"
+monte-carlo-pi-numpy = "section_06_python_array_jobs_parallelism_strategies.monte_carlo_pi_numpy:main"
+monte-carlo-pi-numba = "section_06_python_array_jobs_parallelism_strategies.monte_carlo_pi_numba:main"
+monte-carlo-pi-numba-parallel = "section_06_python_array_jobs_parallelism_strategies.monte_carlo_pi_numba_parallel:main"
+monte-carlo-pi-mpi-hybrid = "section_06_python_array_jobs_parallelism_strategies.monte_carlo_pi_mpi_hybrid:main"
+monte-carlo-pi-summary = "section_06_python_array_jobs_parallelism_strategies.monte_carlo_pi_parallel_strategies:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"section_01_welcome_login_overview" = ["*.md"]
+"section_02_login_checkpoint_first_commands" = ["*.md"]
+"section_03_first_batch_job_slurm" = ["*.md", "*.slurm"]
+"section_05_installing_software" = ["*.md", "*.py", "*.slurm", "*.yml"]
+"section_06_python_array_jobs_parallelism_strategies" = ["*.md", "*.py", "*.slurm"]
+
+[tool.pixi.workspace]
+authors = ["Kolen Cheung <christian.kolen@gmail.com>"]
+channels = ["conda-forge"]
+platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64", "win-64"]
+
+[tool.pixi.tasks]
+sync = { cmd = "jupytext --sync '**/*.ipynb' '**/*.py'", description = "Synchronize ipynb,py pairs using jupytext" }
+monte-carlo-pi-summary = { cmd = "python -m section_06_python_array_jobs_parallelism_strategies.monte_carlo_pi_parallel_strategies", cwd = "." }
+
+[tool.pixi.dependencies]
+python = ">=3.12,<3.13"
+numpy = ">=2,<3"
+numba = ">=0.61,<0.62"
+mpi4py = ">=4,<5"
+jupytext = ">=1.18.1,<2"
+
+[tool.pixi.pypi-dependencies]
+isambard3-workshop = { path = ".", editable = true }

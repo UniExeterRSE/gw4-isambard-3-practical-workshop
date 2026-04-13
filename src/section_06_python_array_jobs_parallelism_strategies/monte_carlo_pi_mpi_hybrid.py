@@ -27,14 +27,24 @@ import numpy as np
 from mpi4py import MPI
 from numba import get_num_threads, njit, prange, set_num_threads
 
-from monte_carlo_pi_common import (
-    ExperimentConfig,
-    ExperimentResult,
-    chunk_lengths,
-    parse_config,
-    print_results,
-    summarise_result,
-)
+try:
+    from .monte_carlo_pi_common import (
+        ExperimentConfig,
+        ExperimentResult,
+        chunk_lengths,
+        parse_config,
+        print_results,
+        summarise_result,
+    )
+except ImportError:
+    from monte_carlo_pi_common import (  # type: ignore
+        ExperimentConfig,
+        ExperimentResult,
+        chunk_lengths,
+        parse_config,
+        print_results,
+        summarise_result,
+    )
 
 VARIANT_NAME = "mpi-hybrid"
 _WARMED_DIMENSIONS: set[int] = set()

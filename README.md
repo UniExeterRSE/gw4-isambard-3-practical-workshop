@@ -53,9 +53,9 @@ Keep a passive follow-along contingency in reserve for the rare attendee who sti
 
 TODOs:
 
-- [x] Create presenter-facing system overview notes covering what Isambard 3 is, Arm/aarch64, CPU-only positioning, Slurm, and storage areas in [src/01-welcome-login-overview/01-system-overview.md](src/01-welcome-login-overview/01-system-overview.md)
-- [x] Create a short attendee storage exercise in [src/01-welcome-login-overview/02-storage-worksheet.md](src/01-welcome-login-overview/02-storage-worksheet.md)
-- [x] Add a section README in [src/01-welcome-login-overview/README.md](src/01-welcome-login-overview/README.md)
+- [x] Create presenter-facing system overview notes covering what Isambard 3 is, Arm/aarch64, CPU-only positioning, Slurm, and storage areas in [src/section_01_welcome_login_overview/01-system-overview.md](src/section_01_welcome_login_overview/01-system-overview.md)
+- [x] Create a short attendee storage exercise in [src/section_01_welcome_login_overview/02-storage-worksheet.md](src/section_01_welcome_login_overview/02-storage-worksheet.md)
+- [x] Add a section README in [src/section_01_welcome_login_overview/README.md](src/section_01_welcome_login_overview/README.md)
 - [ ] Coordinate with BriCS staff on the 10-minute Introduction to BriCS/Isambard 3 (content, speaker, slides)
 - [ ] Turn the overview notes into actual slide deck content
 - [ ] Add exact presenter wording for the Clifton login start and helper choreography
@@ -78,10 +78,10 @@ Include a short signpost that the workshop editing workflow will follow the BriC
 
 TODOs:
 
-- [x] Create a first-commands walkthrough covering `whoami`, `hostname`, `pwd`, storage variables, and basic module commands in [src/02-login-checkpoint-first-commands/01-first-commands.md](src/02-login-checkpoint-first-commands/01-first-commands.md)
-- [x] Create a storage-orientation exercise in [src/02-login-checkpoint-first-commands/02-storage-check.md](src/02-login-checkpoint-first-commands/02-storage-check.md)
-- [x] Create a minimal modules exercise in [src/02-login-checkpoint-first-commands/03-modules-basics.md](src/02-login-checkpoint-first-commands/03-modules-basics.md)
-- [x] Add a section README in [src/02-login-checkpoint-first-commands/README.md](src/02-login-checkpoint-first-commands/README.md)
+- [x] Create a first-commands walkthrough covering `whoami`, `hostname`, `pwd`, storage variables, and basic module commands in [src/section_02_login_checkpoint_first_commands/01-first-commands.md](src/section_02_login_checkpoint_first_commands/01-first-commands.md)
+- [x] Create a storage-orientation exercise in [src/section_02_login_checkpoint_first_commands/02-storage-check.md](src/section_02_login_checkpoint_first_commands/02-storage-check.md)
+- [x] Create a minimal modules exercise in [src/section_02_login_checkpoint_first_commands/03-modules-basics.md](src/section_02_login_checkpoint_first_commands/03-modules-basics.md)
+- [x] Add a section README in [src/section_02_login_checkpoint_first_commands/README.md](src/section_02_login_checkpoint_first_commands/README.md)
 - [ ] Add exact live-teaching prompts for the login checkpoint and helper mop-up
 - [ ] Replace placeholder module examples with confirmed Isambard 3 module names if needed
 - [ ] Add the short spoken reminder about storage not being archival
@@ -101,11 +101,11 @@ Do **not** include `--mail-type=END` as a stretch goal.
 
 TODOs:
 
-- [x] Create a hello-world walkthrough in [src/03-first-batch-job-slurm/01-hello-world.md](src/03-first-batch-job-slurm/01-hello-world.md)
-- [x] Create a starter batch script in [src/03-first-batch-job-slurm/hello_world.slurm](src/03-first-batch-job-slurm/hello_world.slurm)
-- [x] Create a multi-task walkthrough in [src/03-first-batch-job-slurm/02-multi-task.md](src/03-first-batch-job-slurm/02-multi-task.md)
-- [x] Create a multi-task `srun` example in [src/03-first-batch-job-slurm/multi_task.slurm](src/03-first-batch-job-slurm/multi_task.slurm)
-- [x] Add a section README in [src/03-first-batch-job-slurm/README.md](src/03-first-batch-job-slurm/README.md)
+- [x] Create a hello-world walkthrough in [src/section_03_first_batch_job_slurm/01-hello-world.md](src/section_03_first_batch_job_slurm/01-hello-world.md)
+- [x] Create a starter batch script in [src/section_03_first_batch_job_slurm/hello_world.slurm](src/section_03_first_batch_job_slurm/hello_world.slurm)
+- [x] Create a multi-task walkthrough in [src/section_03_first_batch_job_slurm/02-multi-task.md](src/section_03_first_batch_job_slurm/02-multi-task.md)
+- [x] Create a multi-task `srun` example in [src/section_03_first_batch_job_slurm/multi_task.slurm](src/section_03_first_batch_job_slurm/multi_task.slurm)
+- [x] Add a section README in [src/section_03_first_batch_job_slurm/README.md](src/section_03_first_batch_job_slurm/README.md)
 - [ ] Add presenter notes for walking through the first script line by line
 - [ ] Confirm whether the example output filenames and shell choices match local workshop conventions
 - [ ] Add explicit fast-finisher prompts for walltime, job naming, output naming, and `sleep`
@@ -129,16 +129,16 @@ Keep VS Code and other remote-development tooling out of the taught path for thi
 
 TODOs:
 
-- [x] Create a modules-first exercise and decision-order note in [src/05-installing-software/01-modules-first.md](src/05-installing-software/01-modules-first.md)
-- [x] Create a conda/mamba environment exercise in [src/05-installing-software/02-conda-environment.md](src/05-installing-software/02-conda-environment.md)
-- [x] Add an example environment file in [src/05-installing-software/environment.yml](src/05-installing-software/environment.yml)
-- [x] Add a minimal Python verification script in [src/05-installing-software/check_scipy.py](src/05-installing-software/check_scipy.py)
-- [x] Add a batch job example for the Python environment in [src/05-installing-software/run_python_env_check.slurm](src/05-installing-software/run_python_env_check.slurm)
-- [x] Add a containers follow-up note in [src/05-installing-software/03-containers-follow-up.md](src/05-installing-software/03-containers-follow-up.md)
-- [x] Add a section README in [src/05-installing-software/README.md](src/05-installing-software/README.md)
+- [x] Create a modules-first exercise and decision-order note in [src/section_05_installing_software/01-modules-first.md](src/section_05_installing_software/01-modules-first.md)
+- [x] Create a conda/mamba environment exercise in [src/section_05_installing_software/02-conda-environment.md](src/section_05_installing_software/02-conda-environment.md)
+- [x] Add an example environment file in [src/section_05_installing_software/environment.yml](src/section_05_installing_software/environment.yml)
+- [x] Add a minimal Python verification script in [src/section_05_installing_software/check_scipy.py](src/section_05_installing_software/check_scipy.py)
+- [x] Add a batch job example for the Python environment in [src/section_05_installing_software/run_python_env_check.slurm](src/section_05_installing_software/run_python_env_check.slurm)
+- [x] Add a containers follow-up note in [src/section_05_installing_software/03-containers-follow-up.md](src/section_05_installing_software/03-containers-follow-up.md)
+- [x] Add a section README in [src/section_05_installing_software/README.md](src/section_05_installing_software/README.md)
 - [ ] Confirm the exact Isambard 3 module names to use for the taught path
 - [ ] Confirm the preferred conda/mamba initialisation method for interactive and batch use on Isambard 3
-- [ ] Decide whether `pixi` should be mentioned in the taught path or left out to keep the section tighter
+- [ ] Decide whether the root `pyproject.toml` Pixi workflow and editable `src/` package route should be mentioned in the taught path or left out to keep the section tighter
 - [ ] Add the exact support/docs signposting for cases where attendee environments become bespoke
 - [ ] Keep containers as follow-up only and out of the core hands-on path
 

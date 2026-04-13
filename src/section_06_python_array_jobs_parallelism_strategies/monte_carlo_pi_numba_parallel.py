@@ -24,15 +24,26 @@ from __future__ import annotations
 import numpy as np
 from numba import get_num_threads, njit, prange, set_num_threads
 
-from monte_carlo_pi_common import (
-    ExperimentConfig,
-    ExperimentResult,
-    chunk_lengths,
-    parse_config,
-    print_results,
-    summarise_result,
-    timed_count,
-)
+try:
+    from .monte_carlo_pi_common import (
+        ExperimentConfig,
+        ExperimentResult,
+        chunk_lengths,
+        parse_config,
+        print_results,
+        summarise_result,
+        timed_count,
+    )
+except ImportError:
+    from monte_carlo_pi_common import (  # type: ignore
+        ExperimentConfig,
+        ExperimentResult,
+        chunk_lengths,
+        parse_config,
+        print_results,
+        summarise_result,
+        timed_count,
+    )
 
 VARIANT_NAME = "numba-parallel"
 _WARMED_DIMENSIONS: set[int] = set()

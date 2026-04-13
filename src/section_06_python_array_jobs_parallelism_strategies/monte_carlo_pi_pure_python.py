@@ -22,14 +22,24 @@ from __future__ import annotations
 
 import random
 
-from monte_carlo_pi_common import (
-    ExperimentConfig,
-    ExperimentResult,
-    parse_config,
-    print_results,
-    summarise_result,
-    timed_count,
-)
+try:
+    from .monte_carlo_pi_common import (
+        ExperimentConfig,
+        ExperimentResult,
+        parse_config,
+        print_results,
+        summarise_result,
+        timed_count,
+    )
+except ImportError:
+    from monte_carlo_pi_common import (  # type: ignore
+        ExperimentConfig,
+        ExperimentResult,
+        parse_config,
+        print_results,
+        summarise_result,
+        timed_count,
+    )
 
 VARIANT_NAME = "pure-python"
 
