@@ -1,4 +1,4 @@
-# Isambard 3 in One Picture
+## Isambard 3 in One Picture
 
 This workshop is about getting comfortable with the basic workflow on **Isambard 3**:
 
