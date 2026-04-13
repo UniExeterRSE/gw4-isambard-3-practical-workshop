@@ -286,6 +286,7 @@ Any attendee who has not been able to complete setup before the event should con
 - [ ] Put a reservation in place on Isambard 3 for the workshop duration
 - [ ] Confirm if there are any remote participants
 - [ ] Final room/helper plan for login support
+- [ ] Follow the whole workshop end-to-end with an empty user directory from scratch
 
 ## Notes
 
