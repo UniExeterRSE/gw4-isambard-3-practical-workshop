@@ -18,28 +18,28 @@ Core design principles:
 - Prioritise login, first-job workflows, parallelism patterns for serial work, debugging, and practical software setup over broad coverage.
 - Avoid going deep on participants' own custom software stacks during the session.
 - Treat anything outside the prepared exercises as follow-up support rather than in-room troubleshooting.
-- Assume attendee access will have been prepared in advance by the BriCS team, while keeping a lightweight passive follow-along fallback in reserve.
+- Require all attendees to complete the [BriCS setup tutorial](https://docs.isambard.ac.uk/user-documentation/tutorials/setup/) before the event. Treat incomplete setup as a pre-workshop support issue, not something to recover in the room.
 
 ## Schedule
 
-| #   | Section                                              | Duration | Time        |
-| --- | ---------------------------------------------------- | -------- | ----------- |
-| 1   | Welcome + Start Login + System Overview (overlapped) | 30 min   | 10:00–10:30 |
-| 2   | Login Checkpoint + First Commands                    | 10 min   | 10:30–10:40 |
-| 3   | First Batch Job (Slurm)                              | 25 min   | 10:40–11:05 |
-| 4   | Break                                                | 10 min   | 11:05–11:15 |
-| 5   | Installing Software                                  | 15 min   | 11:15–11:30 |
-| 6   | Python Example + Array Jobs + Parallelism Strategies | 25 min   | 11:30–11:55 |
-| 7   | Debugging Failed Jobs                                | 20 min   | 11:55–12:15 |
-| 8   | Tips, Help, Wrap-Up, Q&A & Feedback                  | 15 min   | 12:15–12:30 |
+| #   | Section                                                    | Duration | Time        |
+| --- | ---------------------------------------------------------- | -------- | ----------- |
+| 1   | BriCS Intro (by BriCS) + Welcome + Login + System Overview | 30 min   | 10:00–10:30 |
+| 2   | Login Checkpoint + First Commands                          | 10 min   | 10:30–10:40 |
+| 3   | First Batch Job (Slurm)                                    | 25 min   | 10:40–11:05 |
+| 4   | Break                                                      | 10 min   | 11:05–11:15 |
+| 5   | Installing Software                                        | 15 min   | 11:15–11:30 |
+| 6   | Python Example + Array Jobs + Parallelism Strategies       | 25 min   | 11:30–11:55 |
+| 7   | Debugging Failed Jobs                                      | 20 min   | 11:55–12:15 |
+| 8   | Tips, Help, Wrap-Up, Q&A & Feedback                        | 15 min   | 12:15–12:30 |
 
 ## Section Details
 
-### 1. Welcome + Start Login + System Overview (30 min)
+### 1. BriCS Intro + Welcome + Login + System Overview (30 min)
 
-Login and the overview run in parallel: attendees begin the Clifton login process (`clifton auth`, then `ssh`) while the presenter gives a lightweight system overview and helpers circulate.
+The section opens with a 10-minute introduction to BriCS/Isambard 3 delivered by BriCS staff. Login and the system overview then run in parallel: attendees begin the Clifton login process (`clifton auth`, then `ssh`) while the presenter gives a lightweight system overview and helpers circulate.
 
-Planning assumption: dedicated workshop access will already have been prepared for participants by the BriCS team. The onboarding flow should therefore be designed as a normal active start to the workshop, not as a high-risk access triage exercise.
+**Planning assumption: all attendees will have completed the [BriCS setup tutorial](https://docs.isambard.ac.uk/user-documentation/tutorials/setup/) before the event**, covering portal login, policy acceptance, invitation acceptance, UNIX username, SSH key pair, and Clifton installation. Incomplete setup should be resolved before the day via BriCS support, not recovered in the room.
 
 Default editor path for the workshop: use VS Code via the browser-based tunnel workflow described in the BriCS documentation. Treat this as the standard taught route so participants are all following the same setup unless they deliberately choose an alternative editor.
 
@@ -49,17 +49,18 @@ Do **not** spend long here on architecture-specific software discussion. Keep th
 
 Slides should stay low-demand: large diagrams, minimal text, clear signposting.
 
-Keep a passive follow-along contingency in reserve for the small number of attendees who might still hit an access problem on the day, but treat this as unlikely rather than the expected path.
+Keep a passive follow-along contingency in reserve for the rare attendee who still has an access problem on the day despite completing pre-event setup, but treat this as an edge case.
 
 TODOs:
 
 - [x] Create presenter-facing system overview notes covering what Isambard 3 is, Arm/aarch64, CPU-only positioning, Slurm, and storage areas in [src/01-welcome-login-overview/01-system-overview.md](src/01-welcome-login-overview/01-system-overview.md)
 - [x] Create a short attendee storage exercise in [src/01-welcome-login-overview/02-storage-worksheet.md](src/01-welcome-login-overview/02-storage-worksheet.md)
 - [x] Add a section README in [src/01-welcome-login-overview/README.md](src/01-welcome-login-overview/README.md)
+- [ ] Coordinate with BriCS staff on the 10-minute Introduction to BriCS/Isambard 3 (content, speaker, slides)
 - [ ] Turn the overview notes into actual slide deck content
 - [ ] Add exact presenter wording for the Clifton login start and helper choreography
 - [ ] Add the VS Code browser-tunnel signposting that will be said live in the room
-- [ ] Document the passive follow-along contingency for attendees with access issues
+- [ ] Document the passive follow-along contingency for the rare attendee with an access problem on the day
 
 ### 2. Login Checkpoint + First Commands (10 min)
 
@@ -234,18 +235,25 @@ Important distinction to make clear:
 
 Send on Thursday before the event.
 
-Ask attendees to:
+**Completion of the [BriCS setup tutorial](https://docs.isambard.ac.uk/user-documentation/tutorials/setup/) before the event is mandatory.** Attendees who arrive without a working login will not be able to complete the hands-on exercises and helpers will not have time to recover incomplete setups during the session.
 
-- set their UNIX short name via the portal
-- create a GitHub account if they do not already have one
-- check they have an SSH key pair (or generate one)
-- install Clifton ahead of time if possible
+The setup tutorial covers:
+
+- logging into the BriCS portal
+- accepting access terms and policies
+- accepting the project invitation
+- setting a UNIX username
+- generating an SSH key pair (if needed)
+- installing Clifton
+
+In addition, ask attendees to:
+
 - install the VS Code CLI ahead of time if possible
 - expect the taught editing path to use VS Code in a web browser
 - bring their own preferred text editor set up in advance if they do not want to use the browser-based VS Code route
 - bring a laptop that can open a terminal and a web browser
 
-Keep this preparatory rather than a hard gate, but make the message stronger than optional: the more of this is done before the event, the smoother the hands-on start will be.
+Any attendee who has not been able to complete setup before the event should contact BriCS support ahead of time, not arrive expecting in-room help.
 
 ## Workshop Material Design Notes
 
@@ -287,7 +295,7 @@ Keep this preparatory rather than a hard gate, but make the message stronger tha
 - **Debugging is high demand** — this is why it has a dedicated section and should not be squeezed.
 - **System architecture is also high demand** — include it, but keep it lightweight and relevant.
 - **Biomedical sciences are well represented** — use examples like image processing, parameter sweeps, and many-small-job workflows where useful.
-- **Fallback for anyone who cannot log in:** follow along on the projector. This should be available, but is unlikely to be needed often.
+- **Fallback for anyone who cannot log in:** follow along on the projector. Setup is required before the event, so this should be rare.
 
 ## Out of Scope for this workshop
 
