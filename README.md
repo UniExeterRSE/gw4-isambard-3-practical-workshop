@@ -140,6 +140,9 @@ TODOs:
 - [ ] Decide whether `pixi` should be mentioned in the taught path or left out to keep the section tighter
 - [ ] Add the exact support/docs signposting for cases where attendee environments become bespoke
 - [ ] Keep containers as follow-up only and out of the core hands-on path
+- [ ] Confirm if there's any remote participants
+- [ ] set up a project on the portal for the workshop
+- [ ] put a reservation in place on Isambard 3 for the workshop duration
 
 ### 6. Python Example + Array Jobs + Parallelism Strategies (25 min)
 
