@@ -1,0 +1,8 @@
+[workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "linux-aarch64", "osx-64", "osx-arm64"]
+
+[tasks]
+sync = { cmd = "jupytext --sync '**/*.ipynb' '**/*.py'", description = "Synchronize ipynb,py pairs using jupytext" }
+[dependencies]
+jupytext = ">=1.18.1,<2"
