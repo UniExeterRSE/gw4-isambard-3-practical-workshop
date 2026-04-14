@@ -1,6 +1,5 @@
 ## Isambard 3 Practical Workshop {.hero-slide}
 
-::: {.slide-frame}
 ::: {.hero-grid}
 ::: {.hero-left}
 ![University of Exeter logo](/assets/uoe-logo.png){.hero-uoe}
@@ -38,16 +37,23 @@ Presenter name - Team/Unit - Date
 ![Isambard 3 exterior](/assets/isambard-exterior.jpeg)
 :::
 :::
+
+:::notes
+- Keep architecture detail short — say "Arm/aarch64" once or twice, then move on
+- Emphasise that the workshop examples are all CPU examples
+- Avoid deep discussion of compilers, MPI internals, or custom software stacks here
+- Use the spec table as the "one slide" anchor; do not dwell on internals
+- Point out the fit-check table but do not over-explain — let it speak for itself
+- Mention ARM compatibility briefly to reassure, not to teach porting
 :::
 
 ## What this workshop covers {.shell-slide}
-
-::: {.slide-frame}
 
 ::: {.slide-subtitle}
 Getting comfortable with the basic Isambard 3 workflow
 :::
 
+::: {.shell-grid}
 ::: {.shell-text}
 This workshop is about getting comfortable with the basic workflow on **Isambard 3**: log in, find the right storage area, submit work with Slurm, and use modules or a user-managed environment for software.
 
@@ -55,12 +61,9 @@ By the end of the session you will have submitted real jobs, run Python on the s
 
 Today: system overview → first commands → batch jobs → software setup → parallelism → debugging.
 :::
-
 :::
 
 ## Isambard 3 in one slide {.shell-slide}
-
-::: {.slide-frame}
 
 ::: {.shell-grid}
 ::: {.shell-text}
@@ -88,11 +91,7 @@ Self-service software model: build your own stack (Spack / Conda / containers).
 :::
 :::
 
-:::
-
 ## What Isambard 3 is (and is not) {.shell-slide}
-
-::: {.slide-frame}
 
 ::: {.fit-panels}
 ::: {.fit-panel .good}
@@ -113,11 +112,7 @@ Self-service software model: build your own stack (Spack / Conda / containers).
 :::
 :::
 
-:::
-
 ## Fit check: suitable vs unsuitable workloads {.shell-slide}
-
-::: {.slide-frame}
 
 ::: {.fit-panels}
 ::: {.fit-panel .good}
@@ -138,15 +133,11 @@ Self-service software model: build your own stack (Spack / Conda / containers).
 :::
 :::
 
-::: {.fit-note}
+::: {.slide-note}
 If unsure whether your workload fits, talk to us after the session or email `isambard-support@exeter.ac.uk`.
 :::
 
-:::
-
 ## ARM compatibility in practice {.shell-slide}
-
-::: {.slide-frame}
 
 ::: {.slide-subtitle}
 It's usually easier than you think
@@ -170,12 +161,9 @@ It's usually easier than you think
 :::
 :::
 
-:::
-
 ## Working areas you will use {.shell-slide}
 
-::: {.slide-frame}
-
+::: {.shell-grid}
 ::: {.shell-text}
 | Variable | Purpose | Notes |
 | --- | --- | --- |
@@ -185,13 +173,11 @@ It's usually easier than you think
 
 Before running anything expensive, ask yourself: does this belong in home, project, or scratch?
 :::
-
 :::
 
 ## Workshop workflow {.shell-slide}
 
-::: {.slide-frame}
-
+::: {.shell-grid}
 ::: {.shell-text}
 Everything in this workshop follows the same loop:
 
@@ -201,12 +187,9 @@ Everything in this workshop follows the same loop:
 4. Check output and errors
 5. Iterate
 :::
-
 :::
 
 ## Getting help {.shell-slide}
-
-::: {.slide-frame}
 
 ::: {.contact-grid}
 ::: {.contact-card}
@@ -223,14 +206,3 @@ Docs: [https://docs.isambard.ac.uk](https://docs.isambard.ac.uk)
 Isambard 3 documentation
 :::
 :::
-
-:::
-
-## Presenter Notes
-
-- Keep architecture detail short — say "Arm/aarch64" once or twice, then move on
-- Emphasise that the workshop examples are all CPU examples
-- Avoid deep discussion of compilers, MPI internals, or custom software stacks here
-- Use the spec table as the "one slide" anchor; do not dwell on internals
-- Point out the fit-check table but do not over-explain — let it speak for itself
-- Mention ARM compatibility briefly to reassure, not to teach porting
