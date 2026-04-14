@@ -59,3 +59,6 @@ pillow = ">=12.1.1,<13"
 
 [tool.pixi.pypi-dependencies]
 isambard3-workshop = { path = ".", editable = true }
+
+[tool.jupytext]
+formats = "ipynb,py:percent"
