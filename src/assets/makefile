@@ -1,3 +1,5 @@
+.PHONY: all	docs-qr apply-qr clean
+
 all: docs-qr apply-qr  ## generate all QR codes
 docs-qr: docs-qr.png  ## Generate Docs QR code
 apply-qr: apply-qr.png  ## Generate Apply QR code
@@ -5,6 +7,9 @@ docs-qr.png:
 	qr --output=$@ 'https://docs.isambard.ac.uk'
 apply-qr.png:
 	qr --output=$@ 'https://forms.office.com/e/URU1YTnpq1'
+
+clean:  ## Clean all generated QR code images
+	rm -f docs-qr.png apply-qr.png
 
 .DEFAULT_GOAL = help
 .PHONY: help

@@ -16,6 +16,7 @@ PANDOC_ARGS = \
 	-V transition=slide \
 	-V width=1920
 
+.PHONY: all assets tree html clean
 all: assets tree html  ## Build all HTML files and the index.html tree
 
 assets:  ## Build assets
@@ -28,6 +29,10 @@ index.html: html
 html: $(HTML)
 %.html: %.md
 	pandoc $(PANDOC_ARGS) -o $@ $<
+
+clean:  ## Clean all generated files
+	rm -f $(HTML) index.html
+	$(MAKE) -C assets clean
 
 .DEFAULT_GOAL = help
 .PHONY: help
