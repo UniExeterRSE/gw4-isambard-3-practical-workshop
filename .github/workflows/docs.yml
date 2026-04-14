@@ -51,7 +51,7 @@ jobs:
             (github.event_name == 'pull_request' && (github.head_ref == 'ci' || github.head_ref == 'docs'))
           )
         id: deployment
-        uses: actions/upload-pages-artifact@v4 # or specific "vX.X.X" version tag for this action
+        uses: actions/upload-pages-artifact@v5 # or specific "vX.X.X" version tag for this action
         with:
           path: src/
   deploy:
