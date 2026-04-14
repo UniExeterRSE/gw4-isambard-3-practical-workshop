@@ -4,12 +4,12 @@ Now modify the first example so Slurm launches multiple tasks.
 
 ## Starter script
 
-See `multi_task.slurm`.
+See `multi_task.sh`.
 
 ## Submit it
 
 ```bash
-sbatch multi_task.slurm
+sbatch multi_task.sh
 ```
 
 ## Observe the output

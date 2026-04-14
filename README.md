@@ -102,9 +102,9 @@ Do **not** include `--mail-type=END` as a stretch goal.
 TODOs:
 
 - [x] Create a hello-world walkthrough in [src/section_03_first_batch_job_slurm/01-hello-world.md](src/section_03_first_batch_job_slurm/01-hello-world.md)
-- [x] Create a starter batch script in [src/section_03_first_batch_job_slurm/hello_world.slurm](src/section_03_first_batch_job_slurm/hello_world.slurm)
+- [x] Create a starter batch script in [src/section_03_first_batch_job_slurm/hello_world.sh](src/section_03_first_batch_job_slurm/hello_world.sh)
 - [x] Create a multi-task walkthrough in [src/section_03_first_batch_job_slurm/02-multi-task.md](src/section_03_first_batch_job_slurm/02-multi-task.md)
-- [x] Create a multi-task `srun` example in [src/section_03_first_batch_job_slurm/multi_task.slurm](src/section_03_first_batch_job_slurm/multi_task.slurm)
+- [x] Create a multi-task `srun` example in [src/section_03_first_batch_job_slurm/multi_task.sh](src/section_03_first_batch_job_slurm/multi_task.sh)
 - [x] Add a section README in [src/section_03_first_batch_job_slurm/README.md](src/section_03_first_batch_job_slurm/README.md)
 - [ ] Add presenter notes for walking through the first script line by line
 - [ ] Confirm whether the example output filenames and shell choices match local workshop conventions
@@ -133,7 +133,7 @@ TODOs:
 - [x] Create a conda/mamba environment exercise in [src/section_05_installing_software/02-conda-environment.md](src/section_05_installing_software/02-conda-environment.md)
 - [x] Add an example environment file in [src/section_05_installing_software/environment.yml](src/section_05_installing_software/environment.yml)
 - [x] Add a minimal Python verification script in [src/section_05_installing_software/check_scipy.py](src/section_05_installing_software/check_scipy.py)
-- [x] Add a batch job example for the Python environment in [src/section_05_installing_software/run_python_env_check.slurm](src/section_05_installing_software/run_python_env_check.slurm)
+- [x] Add a batch job example for the Python environment in [src/section_05_installing_software/run_python_env_check.sh](src/section_05_installing_software/run_python_env_check.sh)
 - [x] Add a containers follow-up note in [src/section_05_installing_software/03-containers-follow-up.md](src/section_05_installing_software/03-containers-follow-up.md)
 - [x] Add a section README in [src/section_05_installing_software/README.md](src/section_05_installing_software/README.md)
 - [ ] Confirm the exact Isambard 3 module names to use for the taught path

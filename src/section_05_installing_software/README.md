@@ -8,7 +8,7 @@ Files in this section:
 - `02-conda-environment.md` - user-managed Python environment exercise
 - `environment.yml` - example conda environment file
 - `check_scipy.py` - minimal Python check script
-- `run_python_env_check.slurm` - batch job for the Python example
+- `run_python_env_check.sh` - batch job for the Python example
 - `03-containers-follow-up.md` - optional follow-up reading, not part of the core taught path
 
 Adaptation notes:

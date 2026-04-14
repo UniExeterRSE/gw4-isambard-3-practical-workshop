@@ -31,7 +31,7 @@ python check_scipy.py
 ## Run the same check as a batch job
 
 ```bash
-sbatch run_python_env_check.slurm
+sbatch run_python_env_check.sh
 cat python_env_check.out
 ```
 
@@ -41,7 +41,7 @@ This is an important difference to understand before submitting batch jobs.
 
 When you load a module on the login node and then launch work via `sbatch` or `srun`, the loaded modules carry over to the compute node automatically.
 
-Conda environments do **not** behave this way. A `conda activate` in your shell does not survive the transition to a compute node. You must activate the environment explicitly inside the batch script, which is why `run_python_env_check.slurm` sources the conda initialisation script and calls `conda activate` before running Python.
+Conda environments do **not** behave this way. A `conda activate` in your shell does not survive the transition to a compute node. You must activate the environment explicitly inside the batch script, which is why `run_python_env_check.sh` sources the conda initialisation script and calls `conda activate` before running Python.
 
 ## Questions
 

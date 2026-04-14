@@ -16,4 +16,4 @@ Files in this section:
 - `../../pyproject.toml` - root Python package metadata plus Pixi workspace configuration
 - `hybrid-MPI.md` - thread-related environment variables for hybrid runs
 - `01-mpi-parallelism-stretch.md` - an optional stretch module demonstrating multi-node MPI parallelism using `osu-micro-benchmarks`.
-- `mpi_osu.slurm` - a basic batch script for the multi-node job.
+- `mpi_osu.sh` - a basic batch script for the multi-node job.

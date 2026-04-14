@@ -27,7 +27,7 @@ This is a test with 1 processes
 
 ## Running the multi-node job
 
-See `mpi_osu.slurm` for the script. Note the directives that specifically request more than one node:
+See `mpi_osu.sh` for the script. Note the directives that specifically request more than one node:
 
 ```bash
 #SBATCH --nodes=2
@@ -37,7 +37,7 @@ See `mpi_osu.slurm` for the script. Note the directives that specifically reques
 Submit the script:
 
 ```bash
-sbatch mpi_osu.slurm
+sbatch mpi_osu.sh
 ```
 
 Check its status:

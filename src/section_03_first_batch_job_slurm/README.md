@@ -6,7 +6,7 @@ Files in this section:
 
 - `01-hello-world.md` - first batch job walkthrough
 - `02-multi-task.md` - extend the job to multiple tasks
-- `hello_world.slurm` - starter script
-- `multi_task.slurm` - multi-task script using `srun`
+- `hello_world.sh` - starter script
+- `multi_task.sh` - multi-task script using `srun`
 
 All examples here are CPU-only and suitable for Isambard 3.

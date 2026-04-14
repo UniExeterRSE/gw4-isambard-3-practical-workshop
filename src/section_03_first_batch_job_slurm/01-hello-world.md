@@ -4,12 +4,12 @@ Create and inspect a very small Slurm job first.
 
 ## Starter script
 
-See `hello_world.slurm`.
+See `hello_world.sh`.
 
 ## Submit it
 
 ```bash
-sbatch hello_world.slurm
+sbatch hello_world.sh
 ```
 
 ## Monitor it
