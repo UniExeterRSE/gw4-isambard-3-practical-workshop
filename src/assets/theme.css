@@ -797,6 +797,63 @@ body .reveal-viewport .reveal,
 }
 
 /* ───────────────────────────────────────────────────────────
+   13. Stat grid — key-metrics summary cards
+   ─────────────────────────────────────────────────────────── */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 0.45rem;
+}
+
+/* Allow stat-grid as a direct shell-slide child to fill space */
+.shell-slide > .stat-grid {
+  flex: 1;
+  min-height: 0;
+}
+
+.stat-card {
+  background: var(--fit-good-bg);
+  border: 1px solid var(--fit-good-border);
+  border-radius: var(--card-radius);
+  padding: 0.8rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card p {
+  margin: 0;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: var(--teal-dark);
+  line-height: 1.05;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.55em;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  line-height: 1.3;
+}
+
+/* ───────────────────────────────────────────────────────────
    14. Responsive
    ─────────────────────────────────────────────────────────── */
 
@@ -804,7 +861,8 @@ body .reveal-viewport .reveal,
   .hero-grid,
   .shell-grid,
   .contact-grid,
-  .fit-panels {
+  .fit-panels,
+  .stat-grid {
     grid-template-columns: 1fr;
   }
 
