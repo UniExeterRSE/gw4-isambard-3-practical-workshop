@@ -65,7 +65,7 @@ Isambard 3 serves a lot of its software through **environment modules**. You loa
 - `module avail` --- everything available (long list --- pipe through `head` or `grep`)
 - `module avail <name>` --- search for a specific tool
 
-We only cover more in section 4 on installing softwares in more details.
+We cover this in more detail in Section 4 on installing software.
 :::
 ::::
 
