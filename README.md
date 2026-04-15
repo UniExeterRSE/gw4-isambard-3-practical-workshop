@@ -66,8 +66,10 @@ it. **Do not re-raise this as an open planning concern.**
   earliest the organisers can send it). It links the minimal setup steps we expect every attendee to complete.
 - Doors open at **09:30** for tea, coffee, and optional account-setup support. A single on-screen slide shows the setup
   steps so attendees can self-serve while helpers circulate. Workshop teaching starts at 10:00.
-- The 09:30–10:00 window is a buffer, not a dedicated setup session. Attendees are told in the email to complete setup
-  before arrival where possible and to reply early if something has gone wrong.
+- The 09:30–10:00 window is a buffer, not a dedicated setup session. It is functionally the same process as the
+  pre-workshop email steps — the only difference is that helpers are present in the room. Attendees who have already
+  completed setup do not need to arrive before 10:00. Attendees who have not should come from 09:30. The pre-workshop
+  email makes this explicit and asks attendees to reply early if the project invitation has not arrived.
 
 ## Schedule
 
@@ -368,7 +370,7 @@ In addition, ask attendees to:
 
 ## TODOs
 
-- [ ] Pre-workshop email draft
+- [x] Pre-workshop email draft
 - [ ] Slide deck outline
 - [ ] Broken job scripts for debugging exercise (3 scripts)
 - [x] First Slurm job script
