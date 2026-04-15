@@ -43,122 +43,160 @@ required --- the slide is self-serve. Suggested welcome line as the room fills: 
 setup steps on screen, work through them now; helpers are circulating."
 :::
 
-## Isambard 3 portal {#portal .shell-slide}
+## Step 1: Initial account setup {#initial-setup .shell-slide}
 
 ::: slide-subtitle
-You have already seen this --- a quick orientation
-:::
-
-:::: shell-grid
-::: shell-text
-<https://portal.isambard.ac.uk>
-
-You already logged in here during pre-workshop setup (Step 1 of the setup tutorial).
-
-The portal is a simple **project dashboard**:
-
-- **User dashboard** --- lists the projects you belong to. For most of you, that is one: the workshop project.
-- **Click into a project** --- shows compute usage and NHR (Node Hours Remaining) for that project.
-
-For this workshop, the dedicated project is
-[`exeter-workshop-260421`](https://portal.isambard.ac.uk/projects/b79459a0c1414c40b6ffaebfe827b726/).
-
-Its project ID is `e6c`, which is the alias you will use in SSH hostnames.
-
-Nothing hands-on here --- we mention it so you know where to look later.
-:::
-::::
-
-::: notes
-One slide only --- do not spend more than a minute here. Attendees logged in to the portal in Step 1 of the pre-workshop
-setup tutorial, so this is a quick recap, not new material. The portal is not a teaching goal for this session; see
-README "Out of Scope".
-:::
-
-## Logging in: Clifton and SSH {#login-start .shell-slide}
-
-::: slide-subtitle
-Starting the login process together
+<https://docs.isambard.ac.uk/user-documentation/tutorials/setup/>
 :::
 
 ::::::: shell-grid
 :::::: shell-text
 ::::: columns
-::: {.column width="50%"}
-Open a terminal and run:
+::: {.column width="55%"}
+1.  Go to <https://portal.isambard.ac.uk/>
+2.  Sign in: **University Login (MyAccessID)** → **University of Exeter** → your Exeter credentials
+3.  Follow on-screen instructions --- accept the acceptable-use policy and the workshop project invitation
+4.  Choose a UNIX username:\
+    <https://docs.isambard.ac.uk/user-documentation/tutorials/setup/#how-to-set-your-unix-username>
 
-``` bash
-clifton auth
-```
-
-On Isambard 3, the same portal user can appear with a **different UNIX username** inside each project environment. Your
-shell username (`$USER` / `whoami`) is prefixed by the UNIX name you chose during setup.
-
-For this workshop project, use the project alias host:
-
-``` bash
-ssh e6c.3.isambard
-```
-
-Helpers are circulating --- raise a hand if you see an error.
+**If these notes are too brief** --- follow the full instructions at the link above.
 :::
 
-::: {.column width="50%"}
-Example `clifton` output:
+::: {.column width="45%"}
+**The Isambard 3 portal**
 
-``` console
-Successfully authenticated as **@exeter.ac.uk and downloaded SSH certificate for projects:
-- e6c
-Certificate valid for 11 hours and 59 minutes.
+<https://portal.isambard.ac.uk>
 
-SSH config appears to have changed.
-You may now want to run `clifton ssh-config write` to configure your SSH config aliases.
-clifton ssh-config write
-Updated ~/.ssh/config to contain Include line.
-Wrote SSH config to ~/.ssh/config_clifton.
+Simple project dashboard:
 
-Available SSH host aliases:
- - e6c.macs3.isambard
- - e6c.3.isambard
-```
+- **User dashboard** --- lists projects you belong to
+- **Click a project** --- shows compute usage and NHR (Node Hours Remaining)
+
+Workshop project:\
+[`exeter-workshop-260421`](https://portal.isambard.ac.uk/projects/b79459a0c1414c40b6ffaebfe827b726/)
+
+Project alias: **`e6c`** (used in SSH host aliases)
 :::
 :::::
 ::::::
 :::::::
 
 ::: notes
-Spoken cue: "Everyone open a terminal now --- we will run clifton auth together." Helpers watch for: clifton auth
-failures, SSH key issues, and proxy errors. After roughly two minutes, do a show-of-hands check that the room is in. If
-several people are stuck, pause briefly; if it is one or two, helpers handle it while the presenter moves on.
+Pre-workshop setup Step 1. You will receive a project invitation --- accept it during this step. The right column is a
+brief portal orientation; attendees will have already logged in here. Do not spend more than a minute on the portal side
+at the workshop; see README "Out of Scope".
 :::
 
-## Editing files: VS Code in the browser {#vscode-signpost .shell-slide}
+## Step 2: Clifton and SSH access {#login-start .shell-slide}
 
 ::: slide-subtitle
-The taught editor path for this workshop
+<https://docs.isambard.ac.uk/user-documentation/guides/login/>
+:::
+
+::::::: shell-grid
+:::::: shell-text
+**Install Clifton** (do this once, before the workshop):
+
+::::: columns
+::: {.column width="67%"}
+macOS / Linux:
+
+``` bash
+bash <(curl -L https://raw.githubusercontent.com/ickc/envoy/refs/heads/main/install/clifton.sh) install
+```
+
+Windows:
+
+``` powershell
+winget install clifton
+```
+:::
+
+::: {.column width="33%"}
+Then authenticate and connect:
+
+``` bash
+clifton auth
+```
+
+Follow the on-screen browser prompt. Once done, SSH in:
+
+``` bash
+ssh e6c.3.isambard
+```
+
+Your shell username (`$USER`) will be prefixed by the UNIX name you chose in Step 1.
+:::
+:::::
+
+Example `clifton auth` output:
+
+``` console
+Successfully authenticated as **@exeter.ac.uk and downloaded SSH certificate for projects:
+- e6c
+Certificate valid for 11 hours and 59 minutes.
+
+Available SSH host aliases:
+ - e6c.macs3.isambard
+ - e6c.3.isambard
+```
+::::::
+:::::::
+
+::: notes
+Pre-workshop Step 2. The install command is for before the workshop --- at the event, attendees should already have
+Clifton installed. In-session spoken cue: "Everyone open a terminal now --- we will run `clifton auth` together."
+Helpers watch for: clifton auth failures, SSH key issues, and proxy errors. After roughly two minutes, do a
+show-of-hands check that the room is in. If several people are stuck, pause briefly; if it is one or two, helpers handle
+it while the presenter moves on.
+:::
+
+## Step 3: VS Code CLI {#vscode-setup .shell-slide}
+
+::: slide-subtitle
+<https://docs.isambard.ac.uk/user-documentation/guides/vscode/#install-vs-code-cli>
 :::
 
 :::: shell-grid
 ::: shell-text
-This workshop uses **VS Code via the browser-based tunnel** as the standard editor.
+**Install the VS Code CLI** on Isambard 3 (do this once, before the workshop):
 
-If you installed the VS Code CLI during setup, launch it now:
+``` bash
+bash <(curl -L https://raw.githubusercontent.com/ickc/envoy/refs/heads/main/install/code.sh) install
+```
+
+**Launch a browser tunnel** (run this each session from the login node):
 
 ``` bash
 code tunnel --name isambard3
 ```
 
-Then open the URL shown in your terminal in a browser tab.
+Follow the on-screen instructions to authenticate. When you see:
 
-**Using a different editor?** Desktop VS Code, vim, nano, and others all work --- just bring them set up. We will not
-troubleshoot alternative editors during the session.
+``` console
+Open this link in your browser: https://vscode.dev/tunnel/isambard3/...
+```
+
+Copy that URL and open it in a browser tab. You now have a working editor connected to Isambard 3.
+
+------------------------------------------------------------------------------------------------------------------------
+
+**Fallback** --- if the VS Code CLI is unavailable, load Emacs instead:
+
+``` bash
+module load brics/emacs
+```
+
+**Prefer another editor?** Desktop VS Code, vim, nano all work --- bring it set up. We will not troubleshoot alternative
+editors during the session.
 :::
 ::::
 
 ::: notes
-Spoken cue: "If you installed the VS Code CLI during pre-workshop setup, run `code tunnel --name isambard3` now and open
-the URL it shows you in a browser tab. If you prefer another editor, use that --- just have it ready." Keep this to
-under a minute; attendees who followed the pre-workshop email will already have this ready.
+Pre-workshop Step 3. The install command is for before the workshop. In-session spoken cue: "If you installed the VS
+Code CLI during pre-workshop setup, run `code tunnel --name isambard3` now and open the URL it shows you in a browser
+tab. If you prefer another editor, use that --- just have it ready." Keep this to under a minute; attendees who followed
+the pre-workshop email will already have this ready.
 :::
 
 ## If you cannot log in {#follow-along-contingency .shell-slide}
