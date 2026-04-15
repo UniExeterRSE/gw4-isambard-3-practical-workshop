@@ -27,33 +27,35 @@ If you completed setup before arriving: grab a coffee and check you can open a t
 
 ::: notes
 This slide is displayed on-screen continuously from 09:30 to 10:00 while helpers circulate. No presenter monologue
-required --- the slide is self-serve. TODO: add a brief spoken welcome line for when the room starts filling up.
+required --- the slide is self-serve. Suggested welcome line as the room fills: "Welcome --- if you haven't finished the
+setup steps on screen, work through them now; helpers are circulating."
 :::
 
 ## Isambard 3 portal {#portal .shell-slide}
 
 ::: slide-subtitle
-Account balance and project membership at a glance
+You have already seen this --- a quick orientation
 :::
 
 :::: shell-grid
 ::: shell-text
-TODO: add image of the portal
+<https://portal.isambard.ac.uk>
 
-The portal shows two things:
+You already logged in here during pre-workshop setup (Step 1 of the setup tutorial).
 
-- Your **project membership**
-- Your **account balance**
+The portal is a simple **project dashboard**:
 
-You do not need the portal for anything hands-on in this workshop. We mention it so you know it exists.
+- **User dashboard** --- lists the projects you belong to. For most of you, that is one: the workshop project.
+- **Click into a project** --- shows compute usage and NHR (Node Hours Remaining) for that project.
 
-Portal URL: <https://portal.isambard.ac.uk>
+Nothing hands-on here --- we mention it so you know where to look later.
 :::
 ::::
 
 ::: notes
-One slide only --- do not spend more than a minute here. The portal is not a teaching goal for this session; see README
-"Out of Scope".
+One slide only --- do not spend more than a minute here. Attendees logged in to the portal in Step 1 of the pre-workshop
+setup tutorial, so this is a quick recap, not new material. The portal is not a teaching goal for this session; see
+README "Out of Scope".
 :::
 
 ## Logging in: Clifton and SSH {#login-start .shell-slide}
@@ -81,9 +83,9 @@ Helpers are circulating --- raise a hand if you see an error.
 ::::
 
 ::: notes
-TODO: add exact presenter wording for the Clifton login start cue. Suggested prompt: "Everyone open a terminal now ---
-we will run clifton auth together." Helper choreography: TODO: confirm what helpers should watch for (clifton auth
-failures, SSH key issues, proxy errors). After roughly two minutes, do a show-of-hands check that the room is in.
+Spoken cue: "Everyone open a terminal now --- we will run clifton auth together." Helpers watch for: clifton auth
+failures, SSH key issues, and proxy errors. After roughly two minutes, do a show-of-hands check that the room is in. If
+several people are stuck, pause briefly; if it is one or two, helpers handle it while the presenter moves on.
 :::
 
 ## Editing files: VS Code in the browser {#vscode-signpost .shell-slide}
@@ -110,8 +112,9 @@ troubleshoot alternative editors during the session.
 ::::
 
 ::: notes
-TODO: add the exact spoken signpost line to say live in the room. Keep this brief --- one minute at most. Attendees who
-followed the pre-workshop email will already have this ready.
+Spoken cue: "If you installed the VS Code CLI during pre-workshop setup, run `code tunnel --name isambard3` now and open
+the URL it shows you in a browser tab. If you prefer another editor, use that --- just have it ready." Keep this to
+under a minute; attendees who followed the pre-workshop email will already have this ready.
 :::
 
 ## If you cannot log in {#follow-along-contingency .shell-slide}
@@ -133,7 +136,7 @@ Access issues on the day are rare if the pre-workshop steps were completed. Do n
 ::::
 
 ::: notes
-TODO: confirm the exact fallback support route (helpdesk ticket vs. reply-to email vs. in-room helper). This slide is a
-contingency --- only show it if someone in the room is stuck and the rest of the group needs to move on. Do not read it
+Fallback support route: in-room helper first; reply to the pre-workshop email for project-invitation issues that cannot
+be resolved on the day. Only show this slide if someone is still stuck when the room needs to move on. Do not read it
 out as part of the normal flow.
 :::
