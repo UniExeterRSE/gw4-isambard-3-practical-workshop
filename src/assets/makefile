@@ -1,15 +1,21 @@
-.PHONY: all	docs-qr apply-qr clean
+.PHONY: all	docs-qr workshop-qr pre-session-qr apply-qr clean
 
-all: docs-qr apply-qr  ## generate all QR codes
+all: docs-qr workshop-qr pre-session-qr apply-qr  ## generate all QR codes
 docs-qr: docs-qr.png  ## Generate Docs QR code
+workshop-qr: workshop-qr.png  ## Generate Workshop QR code
+pre-session-qr: pre-session-qr.png  ## Generate Pre-session QR code
 apply-qr: apply-qr.png  ## Generate Apply QR code
 docs-qr.png:
 	qr --output=$@ 'https://docs.isambard.ac.uk'
+workshop-qr.png:
+	qr --output=$@ 'https://uniexeterrse.github.io/gw4-isambard-3-practical-workshop-2026/'
+pre-session-qr.png:
+	qr --output=$@ 'https://uniexeterrse.github.io/gw4-isambard-3-practical-workshop-2026/section_01_welcome_login_overview/00-pre-session.html'
 apply-qr.png:
 	qr --output=$@ 'https://forms.office.com/e/URU1YTnpq1'
 
 clean:  ## Clean all generated QR code images
-	rm -f docs-qr.png apply-qr.png
+	rm -f docs-qr.png workshop-qr.png pre-session-qr.png apply-qr.png
 
 .DEFAULT_GOAL = help
 .PHONY: help
