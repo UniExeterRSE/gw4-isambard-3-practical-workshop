@@ -22,7 +22,7 @@ instructions are on our pre-session page:
 1.  **Initial account setup** — create your account on the Isambard 3 portal and accept the workshop project invitation
     (watch your email — the invitation will arrive shortly).
 2.  **Clifton and SSH** — install the Clifton authentication tool on your laptop and verify you can log in to Isambard
-    3.
+    3.  
 3.  **VS Code CLI** — install the VS Code CLI on Isambard 3 so you have a working editor ready for the session.
 
 The pre-session page above walks through each step. If you are an advanced user and prefer your own editor or
