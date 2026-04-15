@@ -21,9 +21,9 @@ supercomputing on Isambard 3
 :::
 
 ::: docs-qr-block
-![Docs QR code](../assets/docs-qr.png)
+![Workshop QR code](../assets/workshop-qr.png)
 
-[Docs](https://docs.isambard.ac.uk)
+[Workshop site](https://uniexeterrse.github.io/gw4-isambard-3-practical-workshop-2026/)
 :::
 
 ::: presenter-line

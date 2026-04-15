@@ -1,29 +1,42 @@
-## Getting set up before we start {#pre-session-arrival .shell-slide}
+## Getting set up before we start {#pre-session-arrival .hero-slide}
 
-::: slide-subtitle
+:::::::::: hero-grid
+:::::::: hero-left
+![University of Exeter logo](../assets/uoe-logo.png){.hero-uoe}
+
+::: hero-title
+Getting set up before we start
+:::
+
+::: hero-subtitle
 Doors open 09:30 --- workshop teaching starts at 10:00
 :::
 
-:::: shell-grid
-::: shell-text
-If you have not yet completed the pre-workshop setup, please work through these steps now. Helpers are circulating ---
-raise a hand if anything is not working.
+::: next-steps-card
+[Pre-workshop setup]{.card-title}
 
-1.  **Initial account setup**
-
-    <https://docs.isambard.ac.uk/user-documentation/tutorials/setup/>
-
-2.  **Clifton / SSH access**
-
-    <https://docs.isambard.ac.uk/user-documentation/guides/login/>
-
-3.  **VS Code CLI** (install the CLI and launch VS Code in the browser)
-
-    <https://docs.isambard.ac.uk/user-documentation/guides/vscode/#install-vs-code-cli>
-
-If you completed setup before arriving: grab a coffee and check you can open a terminal and reach the login node.
+- [Initial account setup](https://docs.isambard.ac.uk/user-documentation/tutorials/setup/)
+- [Clifton / SSH access](https://docs.isambard.ac.uk/user-documentation/guides/login/)
+- [VS Code CLI](https://docs.isambard.ac.uk/user-documentation/guides/vscode/#install-vs-code-cli)
 :::
-::::
+
+::: docs-qr-block
+![Pre-session QR code](../assets/pre-session-qr.png)
+
+[This page](https://uniexeterrse.github.io/gw4-isambard-3-practical-workshop-2026/section_01_welcome_login_overview/00-pre-session.html)
+:::
+
+::: presenter-line
+If setup is already complete: grab a coffee and check you can open a terminal and reach the login node.
+:::
+
+![GW4 logo](../assets/gw4-logo.png){.hero-gw4}
+::::::::
+
+::: hero-right
+![Isambard 3 exterior](../assets/isambard-exterior.jpeg)
+:::
+::::::::::
 
 ::: notes
 This slide is displayed on-screen continuously from 09:30 to 10:00 while helpers circulate. No presenter monologue
