@@ -119,15 +119,15 @@ TODOs:
   [src/section_01_welcome_login_overview/README.md](src/section_01_welcome_login_overview/README.md)
 - [ ] Coordinate with BriCS staff on the 10-minute Introduction to BriCS/Isambard 3 (content, speaker, slides)
 - [ ] Turn the overview notes into actual slide deck content
-- [ ] Add exact presenter wording for the Clifton login start and helper choreography
-- [ ] Add the VS Code browser-tunnel signposting that will be said live in the room
-- [ ] Document the passive follow-along contingency for the rare attendee with an access problem on the day
-- [ ] Create the single arrival/setup instructions slide (displayed on screen 09:30–10:00, covering the minimal setup
+- [x] Add exact presenter wording for the Clifton login start and helper choreography
+- [x] Add the VS Code browser-tunnel signposting that will be said live in the room
+- [x] Document the passive follow-along contingency for the rare attendee with an access problem on the day
+- [x] Create the single arrival/setup instructions slide (displayed on screen 09:30–10:00, covering the minimal setup
   steps from the pre-workshop email)
 - [ ] Find and embed an NVIDIA Grace CPU image on a single CPU-architecture slide (one slide, within the system
   overview)
-- [ ] Add a single portal slide with a `TODO: add image of the portal` placeholder — the portal only shows project
-  membership and account balance, so one slide is enough
+- [x] Add a single portal slide covering the portal's purpose (project dashboard, usage and NHR per project) — attendees
+  have already seen it in pre-workshop setup Step 1, so the slide is a recap rather than new material
 
 ### 2. Login Checkpoint + First Commands (10 min)
 
