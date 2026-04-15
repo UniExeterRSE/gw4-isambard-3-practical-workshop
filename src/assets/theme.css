@@ -605,7 +605,7 @@ body .reveal-viewport .reveal,
 
 .docs-qr-block {
   margin-top: 0.2rem;
-  width: 100px;
+  width: 180px;
   text-align: center;
 }
 
@@ -614,7 +614,7 @@ body .reveal-viewport .reveal,
 }
 
 .docs-qr-block img {
-  width: 92px;
+  width: 170px;
   border: 1px solid #d8d8d8;
   border-radius: 6px;
   margin-bottom: 0.18rem;
