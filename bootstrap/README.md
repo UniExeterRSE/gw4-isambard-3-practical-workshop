@@ -18,5 +18,6 @@ cd ~/git/UniExeterRSE
 git clone git@github.com:UniExeterRSE/gw4-isambard-3-practical-workshop-2026.git
 cd gw4-isambard-3-practical-workshop-2026
 cd bootstrap
+. dotfiles/.bashrc
 install/bootstrap.sh
 ```
