@@ -2,9 +2,9 @@ This directory is partially copied from <https://github.com/ickc/envoy/> and ada
 
 # curl-bash
 
-TODO: envoy -> main
+TODO: envoy -\> main
 
-```sh
+``` sh
 bash <(curl -L https://raw.githubusercontent.com/UniExeterRSE/gw4-isambard-3-practical-workshop-2026/refs/heads/envoy/bootstrap/install/clifton.sh) install
 bash <(curl -L https://raw.githubusercontent.com/UniExeterRSE/gw4-isambard-3-practical-workshop-2026/refs/heads/envoy/bootstrap/install/code.sh) install
 bash <(curl -L https://raw.githubusercontent.com/UniExeterRSE/gw4-isambard-3-practical-workshop-2026/refs/heads/envoy/bootstrap/install/gh.sh) install
