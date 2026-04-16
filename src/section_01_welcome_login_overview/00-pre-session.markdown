@@ -95,39 +95,39 @@ at the workshop; see README "Out of Scope".
 
 ::::::: shell-grid
 :::::: shell-text
-**Install Clifton** (do this once, before the workshop):
-
 ::::: columns
-::: {.column width="67%"}
-macOS / Linux:
+::: {.column width="60%"}
+**Install Clifton on macOS / Linux:**
 
 ``` bash
 bash <(curl -L https://raw.githubusercontent.com/ickc/envoy/refs/heads/main/install/clifton.sh) install
 ```
 
-Windows:
-
-``` powershell
-winget install clifton
-```
-:::
-
-::: {.column width="33%"}
 Then authenticate and connect:
 
 ``` bash
 clifton auth
 ```
 
-Follow the on-screen browser prompt. Once done, SSH in:
+Authenticate in the browser. Clifton will then suggest:
+
+``` console
+You may now want to run `clifton ssh-config write` to configure your SSH config aliases.
+```
+
+Run it, then SSH in:
 
 ``` bash
 ssh e6c.3.isambard
 ```
-
-Your shell username (`$USER`) will be prefixed by the UNIX name you chose in Step 1.
 :::
-:::::
+
+::: {.column width="40%"}
+**Install Clifton on Windows:**
+
+``` powershell
+winget install clifton
+```
 
 Example `clifton auth` output:
 
@@ -140,15 +140,17 @@ Available SSH host aliases:
  - e6c.macs3.isambard
  - e6c.3.isambard
 ```
+:::
+:::::
 ::::::
 :::::::
 
 ::: notes
-Pre-workshop Step 2. The install command is for before the workshop --- at the event, attendees should already have
-Clifton installed. In-session spoken cue: "Everyone open a terminal now --- we will run `clifton auth` together."
+Pre-workshop Step 2. The install command is for pre-workshop setup --- attendees should already have Clifton installed
+by the time they arrive. In-session spoken cue: "Everyone open a terminal now --- we will run `clifton auth` together."
 Helpers watch for: clifton auth failures, SSH key issues, and proxy errors. After roughly two minutes, do a
-show-of-hands check that the room is in. If several people are stuck, pause briefly; if it is one or two, helpers handle
-it while the presenter moves on.
+show-of-hands check that everyone is connected. If several people are stuck, pause briefly; if only one or two are
+stuck, helpers handle it while the presenter moves on.
 :::
 
 ## Step 3: VS Code CLI {#vscode-setup .shell-slide}
