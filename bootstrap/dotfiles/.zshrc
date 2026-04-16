@@ -7,6 +7,29 @@ path_prepend() {
     fi
 }
 
+# variants of the above with $1 as the prefix only
+# modifies PATH, MANPATH, INFOPATH
+path_prepend_all() {
+    if [[ -d "$1/bin" ]]; then
+        case ":${PATH}:" in
+            *":$1/bin:"*) : ;;
+            *) export PATH="${1}/bin${PATH:+:${PATH}}" ;;
+        esac
+    fi
+    if [[ -d "$1/share/man" ]]; then
+        case ":${MANPATH}:" in
+            *":$1/share/man:"*) : ;;
+            *) export MANPATH="${1}/share/man${MANPATH:+:${MANPATH}}" ;;
+        esac
+    fi
+    if [[ -d "$1/share/info" ]]; then
+        case ":${INFOPATH}:" in
+            *":$1/share/info:"*) : ;;
+            *) export INFOPATH="${1}/share/info${INFOPATH:+:${INFOPATH}}" ;;
+        esac
+    fi
+}
+
 conda_envs_path_prepend() {
     if [[ -d $1 ]]; then
         case ":${CONDA_ENVS_PATH}:" in
@@ -18,6 +41,7 @@ conda_envs_path_prepend() {
 
 # just put conda and mamba in the PATH
 path_prepend "${MAMBA_ROOT_PREFIX}/condabin"
+path_prepend_all "${__OPT_ROOT}/system"
 
 if command -v mamba > /dev/null 2>&1; then
     # * this source the conda functions but not changing the PATH directly
