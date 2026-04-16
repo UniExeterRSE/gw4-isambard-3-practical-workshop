@@ -96,8 +96,8 @@ at the workshop; see README "Out of Scope".
 ::::::: shell-grid
 :::::: shell-text
 ::::: columns
-::: {.column width="60%"}
-**Install Clifton on macOS / Linux:**
+::: {.column width="55%"}
+**Install Clifton on macOS/Linux:**
 
 ``` bash
 bash <(curl -L https://raw.githubusercontent.com/ickc/envoy/refs/heads/main/install/clifton.sh) install
@@ -122,12 +122,10 @@ ssh e6c.3.isambard
 ```
 :::
 
-::: {.column width="40%"}
-**Install Clifton on Windows:**
+::: {.column width="45%"}
+Using Windows? Follow the [official guide](https://docs.isambard.ac.uk/user-documentation/guides/login/)
 
-``` powershell
-winget install clifton
-```
+Issues? [Open a ticket](https://support.isambard.ac.uk/)
 
 Example `clifton auth` output:
 
@@ -146,11 +144,11 @@ Available SSH host aliases:
 :::::::
 
 ::: notes
-Pre-workshop Step 2. The install command is for pre-workshop setup --- attendees should already have Clifton installed
-by the time they arrive. In-session spoken cue: "Everyone open a terminal now --- we will run `clifton auth` together."
-Helpers watch for: clifton auth failures, SSH key issues, and proxy errors. After roughly two minutes, do a
-show-of-hands check that everyone is connected. If several people are stuck, pause briefly; if only one or two are
-stuck, helpers handle it while the presenter moves on.
+Pre-workshop Step 2. Attendees should already have Clifton installed before arriving; the install command is shown for
+reference. In-session spoken cue: "Everyone open a terminal now --- we will run `clifton auth` together." Helpers watch
+for: clifton auth failures, SSH key issues, and proxy errors. After roughly two minutes, do a show-of-hands check that
+everyone is connected. If several people are stuck, pause briefly; if only one or two are stuck, helpers handle it while
+the presenter moves on.
 :::
 
 ## Step 3: VS Code CLI {#vscode-setup .shell-slide}
