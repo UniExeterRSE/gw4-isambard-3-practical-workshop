@@ -222,26 +222,19 @@ briefly and move on.
 
 TODOs:
 
-- [x] Create a modules-first exercise and decision-order note in
-  [src/section_04_installing_software/01-modules-first.md](src/section_04_installing_software/01-modules-first.md)
-- [x] Create a conda/mamba environment exercise in
-  [src/section_04_installing_software/02-conda-environment.md](src/section_04_installing_software/02-conda-environment.md)
-- [x] Add an example environment file in
-  [src/section_04_installing_software/environment.yml](src/section_04_installing_software/environment.yml)
-- [x] Add a minimal Python verification script in
-  [src/section_04_installing_software/check_scipy.py](src/section_04_installing_software/check_scipy.py)
-- [x] Add a batch job example for the Python environment in
-  [src/section_04_installing_software/run_python_env_check.sh](src/section_04_installing_software/run_python_env_check.sh)
-- [x] Add a containers follow-up note in
-  [src/section_04_installing_software/03-containers-follow-up.md](src/section_04_installing_software/03-containers-follow-up.md)
-- [x] Add a section README in
-  [src/section_04_installing_software/README.md](src/section_04_installing_software/README.md)
-- [ ] Confirm the exact Isambard 3 module names to use for the taught path
-- [ ] Confirm the preferred conda/mamba initialisation method for interactive and batch use on Isambard 3
-- [ ] Decide whether the root `pyproject.toml` Pixi workflow and editable `src/` package route should be mentioned in
-  the taught path or left out to keep the section tighter
-- [ ] Add the exact support/docs signposting for cases where attendee environments become bespoke
-- [ ] Keep containers as follow-up only and out of the core hands-on path
+- [x] Create the section 4 slide deck in
+  [src/section_04_installing_software/installing_software.markdown](src/section_04_installing_software/installing_software.markdown)
+  covering software landscape, modules commands, conda vocabulary, hands-on environment creation, Pixi/direnv context,
+  and other routes (Spack, containers) as follow-up only
+- [x] Add conda environment files for the taught path (in `bootstrap/conda/`, e.g. `py314_linux-aarch64.yml`)
+- [x] Confirm the preferred conda/mamba initialisation method for interactive and batch use on Isambard 3 (bootstrap
+  scripts via miniforge; taught in slides)
+- [x] Decide whether the root `pyproject.toml` Pixi workflow and editable `src/` package route should be mentioned in
+  the taught path or left out to keep the section tighter (decided: brief context slide only, not core path)
+- [x] Add the exact support/docs signposting for cases where attendee environments become bespoke (“Other routes” slide
+  with docs links and explicit helper-redirect wording)
+- [x] Keep containers as follow-up only and out of the core hands-on path
+- [x] Confirm the module demo example (`module load brics/emacs`) is a real, loadable module on Isambard 3
 
 ### 5. Python Example + Array Jobs + Parallelism Strategies (25 min) — Active
 
