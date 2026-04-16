@@ -8,6 +8,9 @@ XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"${HOME}/.config"}"
 ZDOTDIR="${ZDOTDIR:-"${XDG_CONFIG_HOME}/zsh"}"
 BINDIR="${__OPT_ROOT}/bin"
 
+# https://unix.stackexchange.com/a/84980/192799
+DOWNLOADDIR="$(mktemp -d 2> /dev/null || mktemp -d -t 'gh')"
+
 # shellcheck disable=SC2312
 read -r __OSTYPE __ARCH <<< "$(uname -sm)"
 
@@ -39,8 +42,6 @@ gh_install() {
     local filename
     local dirname
     local url
-    local tmpdir
-
     version="$(gh_latest_version)"
 
     case "${__OSTYPE}-${__ARCH}" in
@@ -66,10 +67,7 @@ gh_install() {
     dirname="${dirname%.zip}"
     url="https://github.com/cli/cli/releases/download/v${version}/${filename}"
 
-    tmpdir="$(mktemp -d)"
-    trap 'rm -rf "${tmpdir}"' EXIT
-
-    cd "${tmpdir}"
+    cd "${DOWNLOADDIR}"
 
     if command -v curl > /dev/null; then
         curl -fL "${url}" -o "${filename}"
@@ -92,6 +90,9 @@ gh_install() {
 
     mkdir -p "${BINDIR}"
     mv "${dirname}/bin/gh" "${BINDIR}"
+
+    cd - > /dev/null || exit 1
+    rm -rf "${DOWNLOADDIR}"
 }
 
 gh_uninstall() {
