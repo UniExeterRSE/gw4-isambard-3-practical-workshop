@@ -865,7 +865,7 @@ body .reveal-viewport .reveal,
 }
 
 /* ───────────────────────────────────────────────────────────
-   14. Code blocks — remove reveal.js default max-height cap
+   15. Code blocks — remove reveal.js default max-height cap
    ─────────────────────────────────────────────────────────── */
 
 /* reveal.js white theme sets pre code { max-height: 400px } which clips
@@ -900,7 +900,7 @@ body .reveal-viewport .reveal,
 }
 
 /* ───────────────────────────────────────────────────────────
-   15. Responsive
+   17. Responsive
    ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 1100px) {
