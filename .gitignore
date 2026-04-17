@@ -1,2 +1,3 @@
 data/
 .pixi/
+*.egg-info/
