@@ -1,24 +1,20 @@
-CC      ?= gcc
-CFLAGS  ?= -O3 -mcpu=neoverse-v2 -std=c11 -Wall -Wextra
-LDFLAGS ?=
-LDLIBS  ?= -lm
+CC     ?= cc
+CFLAGS ?= -O3 -mcpu=neoverse-v2 -std=c11 -Wall -Wextra
 
 .DEFAULT_GOAL = all
 
-.PHONY: all openmp clean help
+.PHONY: all clean help
 
-all: matmul  ## build the single-threaded matmul binary
+all: matmul_dgemm matmul_sgemm  ## build both the double- and single-precision BLAS matmul binaries
 
-matmul: matmul.c
-	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS) $(LDLIBS)
+matmul_dgemm: matmul.c  ## build the cblas_dgemm (double precision) binary
+	$(CC) $(CFLAGS) -o $@ $<
 
-openmp: matmul_omp  ## build an OpenMP-parallel matmul_omp binary (stretch)
-
-matmul_omp: matmul.c
-	$(CC) $(CFLAGS) -fopenmp -o $@ $< $(LDFLAGS) $(LDLIBS)
+matmul_sgemm: matmul.c  ## build the cblas_sgemm (single precision) binary
+	$(CC) $(CFLAGS) -DUSE_SGEMM -o $@ $<
 
 clean:  ## remove built binaries
-	rm -f matmul matmul_omp
+	rm -f matmul_dgemm matmul_sgemm
 
 help:  ## print this help message
 	@awk 'BEGIN{w=0;n=0}{while(match($$0,/\\$$/)){sub(/\\$$/,"");getline nextLine;$$0=$$0 nextLine}if(/^[[:alnum:]_-]+:.*##.*$$/){n++;split($$0,parts,":.*##");targets[n]=parts[1];helps[n]=parts[2];l=length(targets[n]);if(w<l)w=l}}END{for(i=1;i<=n;i++)printf"\033[1m\033[93m%-*s\033[0m%s\n",w+1,targets[i]":",helps[i]}' $(MAKEFILE_LIST)

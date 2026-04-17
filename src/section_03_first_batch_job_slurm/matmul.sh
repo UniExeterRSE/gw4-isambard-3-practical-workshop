@@ -8,8 +8,8 @@
 set -euo pipefail
 
 module reset
-module load gcc-native
+module load PrgEnv-gnu
 
-make matmul
+make
 
-./matmul 1024
+./matmul_dgemm 1024
