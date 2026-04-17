@@ -283,27 +283,31 @@ Compile + submit + read --- same loop, bigger payload
 
 :::: shell-grid
 ::: shell-text
-A tiny C program calls `cblas_dgemm` and prints a wall time and a GFLOPS number:
+One C file, two builds: a hand-rolled triple loop and a call into BLAS `cblas_dgemm`. Both print wall time and GFLOPS.
 
 ``` bash
 module load PrgEnv-gnu
 make                   # cc -O3 -mcpu=neoverse-v2 ... (LibSci auto-linked)
+./matmul_naive 1024
 ./matmul_dgemm 1024
 ```
 
-Run it under Slurm with `matmul.sh` (1-minute walltime, 1 core).
+Run both under Slurm with `matmul.sh` (1-minute walltime, 1 core).
 
+    matmul routine=naive ikj triple loop (double) N=1024 OMP_NUM_THREADS=(unset)
+    elapsed_s=1.8321 gflops=1.17 checksum=1.234567e+08
     matmul routine=cblas_dgemm (double) N=1024 OMP_NUM_THREADS=(unset)
     elapsed_s=0.0421 gflops=51.02 checksum=1.234567e+08
 
-We are **not** dissecting the number today --- the point is the round trip. We will revisit scaling and precision later
-in the workshop.
+Same machine, same `N`, same arithmetic. Notice the gap. We are **not** dissecting it today --- we will revisit *why*
+(cache blocking, vectorisation, LibSci) later in the workshop.
 :::
 ::::
 
 ::: notes
 - Only reach for this if the room has comfortably finished multi-task
 - Framing: "here is something non-trivial running end-to-end"; do not be tempted to start explaining LibSci threading
+- The naive/BLAS gap is deliberate bait --- acknowledge it, then defer the why to the later scaling/precision section
 - If someone asks "why is it so fast / slow?", note it and defer to the later section
 :::
 
