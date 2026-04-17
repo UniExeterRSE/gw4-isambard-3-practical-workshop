@@ -71,3 +71,7 @@ The `README.md` is explicit about what is and is not taught in this workshop. Wh
 respect the “Out of Scope” list and the per-section “Do **not**” instructions (e.g. no partition changes in the beginner
 Slurm path, no `--mail-type=END`, containers are follow-up only, no JupyterHub, no long detours into bespoke attendee
 environments). Prefer updating the blueprint first if a scope change is intentional.
+
+## Troubleshooting
+
+- **Missing pixi:** install with `curl -fsSL https://pixi.sh/install.sh | sh`.
