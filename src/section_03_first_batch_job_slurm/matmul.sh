@@ -12,4 +12,5 @@ module load PrgEnv-gnu
 
 make
 
+./matmul_naive 1024
 ./matmul_dgemm 1024

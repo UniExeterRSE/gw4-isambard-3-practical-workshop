@@ -9,10 +9,13 @@ revisit what the numbers mean (scaling, precision, LibSci threading) later in th
 
 ## Files
 
-- `matmul.c` — calls `cblas_dgemm` (or `cblas_sgemm` with `-DUSE_SGEMM`) and times the GEMM call with `clock_gettime`.
-- `makefile` — builds `matmul_dgemm` and `matmul_sgemm` with the Cray C wrapper `cc`. LibSci is linked automatically
-  under `PrgEnv-gnu`, no explicit `-lblas` needed.
-- `matmul.sh` — loads `PrgEnv-gnu`, runs `make`, runs `./matmul_dgemm 1024`.
+- `matmul.c` — one source file, three builds:
+  - default → `cblas_dgemm` (double precision BLAS)
+  - `-DUSE_SGEMM` → `cblas_sgemm` (single precision BLAS)
+  - `-DUSE_NAIVE` → a hand-rolled `ikj` triple-loop (double precision, no BLAS)
+- `makefile` — builds `matmul_dgemm`, `matmul_sgemm`, and `matmul_naive` with the Cray C wrapper `cc`. LibSci is linked
+  automatically under `PrgEnv-gnu`, no explicit `-lblas` needed.
+- `matmul.sh` — loads `PrgEnv-gnu`, runs `make`, runs `./matmul_naive 1024` then `./matmul_dgemm 1024`.
 
 ## Build and submit
 
@@ -28,9 +31,13 @@ The job script handles `module load PrgEnv-gnu` and `make` before running the bi
 cat matmul.out
 ```
 
-You should see something like:
+You should see two blocks, something like:
 
+    matmul routine=naive ikj triple loop (double) N=1024 OMP_NUM_THREADS=(unset)
+    elapsed_s=1.8321 gflops=1.17 checksum=1.234567e+08
     matmul routine=cblas_dgemm (double) N=1024 OMP_NUM_THREADS=(unset)
     elapsed_s=0.0421 gflops=51.02 checksum=1.234567e+08
 
-Exact numbers vary; the point is that you got a number out at all. We will come back to what it means.
+Exact numbers vary — the point is the gap. Same machine, same `N`, same arithmetic, and one version is ~40× faster than
+the other. Notice it, sit with it, and we will come back to *why* (cache blocking, vectorisation, LibSci) later in the
+workshop.
