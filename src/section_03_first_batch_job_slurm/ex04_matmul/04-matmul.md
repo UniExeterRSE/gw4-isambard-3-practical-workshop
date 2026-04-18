@@ -47,16 +47,16 @@ cat matmul.out
 You should see four blocks, something like:
 
     === Running matmul_sgemm... ===
-    matmul routine=cblas_sgemm (float) N=16384 OMP_NUM_THREADS=144
+    matmul routine=cblas_sgemm (float) N=16384 omp_threads=144
     elapsed_s=0.0631 gflops=277.43 checksum=...
     === Running matmul_dgemm... ===
-    matmul routine=cblas_dgemm (double) N=16384 OMP_NUM_THREADS=144
+    matmul routine=cblas_dgemm (double) N=16384 omp_threads=144
     elapsed_s=0.1124 gflops=156.03 checksum=...
     === Running matmul_naive_flt... ===
-    matmul routine=naive ikj triple loop (float) N=16384 OMP_NUM_THREADS=144
+    matmul routine=naive ikj triple loop (float) N=16384 omp_threads=144
     elapsed_s=... gflops=... checksum=...
     === Running matmul_naive... ===
-    matmul routine=naive ikj triple loop (double) N=16384 OMP_NUM_THREADS=144
+    matmul routine=naive ikj triple loop (double) N=16384 omp_threads=144
     elapsed_s=... gflops=... checksum=...
 
 Exact numbers vary — the point is the gaps. Same machine, same `N`, same arithmetic: the BLAS versions are substantially
