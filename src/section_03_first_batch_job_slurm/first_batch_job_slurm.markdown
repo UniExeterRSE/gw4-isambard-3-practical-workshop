@@ -89,6 +89,8 @@ env | sort > hello_world_${HOSTNAME}.env
 
 - `#SBATCH` lines are comments to the shell, **directives** to Slurm
 - Below the directives is just bash --- anything you can run interactively
+- Think **reproducibility**: the script documents exactly how the job was set up --- do not rely on modules you loaded
+  earlier or files you happened to have in `$PWD`; put everything the job needs inside the script
 :::
 ::::
 
@@ -163,10 +165,13 @@ srun --ntasks=1 --cpus-per-task=1 --time=00:10:00 --pty bash
 
 Lands you on a compute node with a prompt. Run the same commands you would put in a batch script.
 
-- Quick: "does this module load cleanly?", "does my script find its data?"
+- Quick checks: "does this module load cleanly?", "does my script find its data?"
 - Short-lived: `exit` when you are done --- do not idle
+- Some workflows **genuinely need** interactivity: steering a solver, inspecting intermediate results, manually nudging
+  a parameter to escape a local minimum. If your science requires a human in the loop, this is the tool.
 
-**Do not** use interactive jobs for long-running work. Batch survives laptop lids.
+The point is not "never use interactive jobs" --- it is **use resources responsibly**. Idle allocations block others.
+Batch is better when there is no human in the loop.
 :::
 ::::
 
