@@ -21,14 +21,16 @@ typedef double real_t;
 #endif
 #endif
 
-static double wall_seconds(void) {
+static double wall_seconds(void)
+{
     struct timespec ts;
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return (double)ts.tv_sec + (double)ts.tv_nsec * 1e-9;
 }
 
 #ifdef USE_NAIVE
-static void naive_gemm(const real_t *A, const real_t *B, real_t *C, int n) {
+static void naive_gemm(const real_t* A, const real_t* B, real_t* C, int n)
+{
     for (int i = 0; i < n; i++) {
         for (int k = 0; k < n; k++) {
             real_t a = A[(size_t)i * n + k];
@@ -40,7 +42,8 @@ static void naive_gemm(const real_t *A, const real_t *B, real_t *C, int n) {
 }
 #endif
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv)
+{
     int n = (argc > 1) ? atoi(argv[1]) : 1024;
     if (n <= 0) {
         fprintf(stderr, "usage: %s [N]   (N > 0)\n", argv[0]);
@@ -48,9 +51,9 @@ int main(int argc, char **argv) {
     }
 
     size_t elems = (size_t)n * (size_t)n;
-    real_t *A = malloc(elems * sizeof(real_t));
-    real_t *B = malloc(elems * sizeof(real_t));
-    real_t *C = malloc(elems * sizeof(real_t));
+    real_t* A = malloc(elems * sizeof(real_t));
+    real_t* B = malloc(elems * sizeof(real_t));
+    real_t* C = malloc(elems * sizeof(real_t));
     if (!A || !B || !C) {
         fprintf(stderr, "allocation failed for N=%d\n", n);
         free(A);
@@ -65,7 +68,7 @@ int main(int argc, char **argv) {
     }
     memset(C, 0, elems * sizeof(real_t));
 
-    const char *threads_env = getenv("OMP_NUM_THREADS");
+    const char* threads_env = getenv("OMP_NUM_THREADS");
     printf("matmul routine=%s N=%d OMP_NUM_THREADS=%s\n", GEMM_NAME, n, threads_env ? threads_env : "(unset)");
 
     double t0 = wall_seconds();
