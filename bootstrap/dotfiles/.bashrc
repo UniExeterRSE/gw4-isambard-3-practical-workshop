@@ -113,4 +113,5 @@ conda_envs_path_prepend "${__OPT_ROOT}"
 
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook bash)"
 command -v starship > /dev/null 2>&1 && eval "$(starship init bash)"
+command -v fzf > /dev/null 2>&1 && eval "$(fzf --bash)"
 command -v ssh-agent > /dev/null 2>&1 && auto_ssh_agent
