@@ -32,6 +32,8 @@ except ImportError:
 
 from .monte_carlo_pi_common import parse_config, print_results
 from .monte_carlo_pi_numba import run_experiment as run_numba
+from .monte_carlo_pi_numba_chunked import run_experiment as run_numba_chunked
+from .monte_carlo_pi_numba_chunked import run_experiment_parallel as run_numba_chunked_parallel
 from .monte_carlo_pi_numba_parallel import run_experiment as run_numba_parallel
 from .monte_carlo_pi_numpy import run_experiment as run_numpy
 from .monte_carlo_pi_pure_python import run_experiment as run_pure_python
@@ -58,6 +60,8 @@ def main() -> None:
         results.append(run_pure_python(config))
         results.append(run_numpy(config))
         results.append(run_numba(config))
+        results.append(run_numba_chunked(config))
+        results.append(run_numba_chunked_parallel(config))
         results.append(run_numba_parallel(config))
     if _HAS_MPI and size > 1:
         COMM.Barrier()

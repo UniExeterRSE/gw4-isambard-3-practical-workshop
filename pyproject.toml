@@ -18,6 +18,7 @@ dependencies = [
 monte-carlo-pi-pure-python = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_pure_python:main"
 monte-carlo-pi-numpy = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numpy:main"
 monte-carlo-pi-numba = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba:main"
+monte-carlo-pi-numba-chunked = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba_chunked:main"
 monte-carlo-pi-numba-parallel = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba_parallel:main"
 monte-carlo-pi-mpi-hybrid = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_mpi_hybrid:main"
 monte-carlo-pi-summary = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_parallel_strategies:main"
