@@ -59,7 +59,7 @@ format-md = { cmd = "python bin/md_formatter.py '**/*.md' -t gfm", description =
 format-py = { cmd = "ruff check --fix src/ bin/ && ruff format src/ bin/", description = "Lint-fix and format .py and .ipynb files with ruff." }
 format-sh = { cmd = "bash bin/sh_formatter.sh", description = "Format .sh files using sed and shfmt." }
 generate = { depends-on = ["generate-conda-env", "generate-bashrc"], description = "Run all auto-generation scripts." }
-generate-conda-env = { cmd = "pixi workspace export conda-environment --platform linux-aarch64 environment.yml && python bin/fix_conda_env.py environment.yml", description = "Export the pixi environment to a conda-compatible environment.yml, stripping duplicate pip entries." }
+generate-conda-env = { cmd = "pixi workspace export conda-environment --environment default --platform linux-aarch64 environment.yml && python bin/fix_conda_env.py environment.yml && pixi workspace export conda-environment --environment hpc --platform linux-aarch64 environment_hpc.yml && python bin/fix_conda_env.py environment_hpc.yml", description = "Export both pixi environments to conda-compatible environment.yml / environment_hpc.yml, stripping duplicate pip entries." }
 generate-bashrc = { cmd = "cd bootstrap/dotfiles && make", description = "Generate .bashrc" }
 
 [tool.pixi.dependencies]

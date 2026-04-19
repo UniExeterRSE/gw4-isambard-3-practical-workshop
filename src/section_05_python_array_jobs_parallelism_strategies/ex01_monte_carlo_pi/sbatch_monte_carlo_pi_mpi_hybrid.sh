@@ -16,6 +16,9 @@ module reset
 module load PrgEnv-gnu
 
 # pixi hpc environment
+# Advanced users: use `mamba env create -f environment_hpc.yml -n isambard3-workshop-hpc -y`
+# once, then replace the eval line below with:
+# mamba activate isambard3-workshop-hpc
 # shellcheck disable=SC2312
 eval "$(pixi shell-hook --environment hpc)"
 
