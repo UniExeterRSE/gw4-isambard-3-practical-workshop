@@ -16,12 +16,12 @@ dependencies = [
 ]
 
 [project.scripts]
-monte-carlo-pi-pure-python = "section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_pure_python:main"
-monte-carlo-pi-numpy = "section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_numpy:main"
-monte-carlo-pi-numba = "section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_numba:main"
-monte-carlo-pi-numba-parallel = "section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_numba_parallel:main"
-monte-carlo-pi-mpi-hybrid = "section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_mpi_hybrid:main"
-monte-carlo-pi-summary = "section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_parallel_strategies:main"
+monte-carlo-pi-pure-python = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_pure_python:main"
+monte-carlo-pi-numpy = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numpy:main"
+monte-carlo-pi-numba = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba:main"
+monte-carlo-pi-numba-parallel = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba_parallel:main"
+monte-carlo-pi-mpi-hybrid = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_mpi_hybrid:main"
+monte-carlo-pi-summary = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_parallel_strategies:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -34,7 +34,9 @@ where = ["src"]
 "section_02_login_checkpoint_first_commands" = ["*.md"]
 "section_03_first_batch_job_slurm" = ["*.md", "*.sh"]
 "section_04_installing_software" = ["*.md", "*.py", "*.sh", "*.yml"]
-"section_05_python_array_jobs_parallelism_strategies" = ["*.md", "*.py", "*.sh"]
+"section_05_python_array_jobs_parallelism_strategies" = ["*.md"]
+"section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi" = ["*.md", "*.sh"]
+"section_05_python_array_jobs_parallelism_strategies.ex02_monte_carlo_pi_c" = ["*.md", "*.c", "*.h", "*.sh"]
 
 [tool.pixi.workspace]
 authors = ["Kolen Cheung <christian.kolen@gmail.com>"]
@@ -46,7 +48,7 @@ PRESENTATION_PORT = "8001"
 
 [tool.pixi.tasks]
 sync = { cmd = "jupytext --sync '**/*.ipynb' '**/*.py'", description = "Synchronize ipynb,py pairs using jupytext" }
-monte-carlo-pi-summary = { cmd = "python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_parallel_strategies", cwd = ".", description = "Run the Monte Carlo Pi pipelines." }
+monte-carlo-pi-summary = { cmd = "python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_parallel_strategies", cwd = ".", description = "Run the Monte Carlo Pi pipelines." }
 docs = { cmd = "cd src; make all", description = "Make HTMLs." }
 serve = { cmd = "python -m http.server $PRESENTATION_PORT --bind 127.0.0.1 --directory src", description = "Serve the presentation.", depends-on = ["docs"] }
 linkcheck-local = { cmd = "lychee http://127.0.0.1:$PRESENTATION_PORT", description = "Check the local presentation with lychee." }

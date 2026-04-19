@@ -54,7 +54,7 @@ The script also reports:
 ## Hyper-parameters
 
 - `d`: sphere dimension
-- `N`: number of Monte Carlo samples
+- `N`: total number of Monte Carlo samples (single-process variants); samples per thread (hybrid variant)
 - `NUM_THREADS`: thread count for the threaded Numba variants
 - MPI process count: only relevant for the hybrid case, controlled by `mpiexec -n`
 
@@ -71,9 +71,8 @@ pixi install
 The root `pyproject.toml` installs the numerical dependencies through Pixi and also installs the project itself as an
 editable local package via `[tool.pixi.pypi-dependencies]`.
 
-The root `pyproject.toml` now carries both the standard Python packaging metadata and the Pixi configuration under
-`[tool.pixi.*]`. The scripts keep a fallback import path so you can still run them directly from this section directory
-with `python monte_carlo_pi_numpy.py` if that is more convenient for the workshop flow.
+The scripts keep a fallback import path so you can still run them directly from this directory with
+`python monte_carlo_pi_numpy.py` if that is more convenient for the workshop flow.
 
 ## Files
 
@@ -91,7 +90,7 @@ with `python monte_carlo_pi_numpy.py` if that is more convenient for the worksho
 Run the summary script from the repository root:
 
 ``` bash
-pixi run python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_parallel_strategies -d 2 -n 200000 -t 4
+pixi run python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_parallel_strategies -d 2 -n 200000 -t 4
 ```
 
 That summary runner imports the four non-MPI variants and prints one table. If you launch the same script under
@@ -100,10 +99,10 @@ That summary runner imports the four non-MPI variants and prints one table. If y
 Or run one implementation explicitly:
 
 ``` bash
-pixi run python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_pure_python -d 2 -n 50000
-pixi run python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_numpy -d 2 -n 200000
-pixi run python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_numba -d 2 -n 200000
-pixi run python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_numba_parallel -d 2 -n 200000 -t 4
+pixi run python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_pure_python -d 2 -n 50000
+pixi run python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numpy -d 2 -n 200000
+pixi run python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba -d 2 -n 200000
+pixi run python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba_parallel -d 2 -n 200000 -t 4
 ```
 
 ## Run the hybrid MPI variant
@@ -114,33 +113,39 @@ Set the thread-related environment first, following `hybrid-MPI.md`, then launch
 export NUM_THREADS=4
 export NUMBA_NUM_THREADS=${NUM_THREADS}
 
-pixi run mpiexec -n 4 python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_mpi_hybrid \
+pixi run mpiexec -n 4 python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_mpi_hybrid \
   -d 2 \
-  -n 2000000 \
+  -n 50000 \
   -t ${NUM_THREADS}
 ```
 
+Here `-n` is **samples per thread** (matching the C convention in `../ex02_monte_carlo_pi_c/`). Total samples = MPI
+ranks × threads × `-n`. With 4 ranks and 4 threads the above gives 800 000 total samples.
+
 In this hybrid setup:
 
-- MPI distributes the total number of samples across ranks
-- each rank generates its own random points
+- `-n` samples are drawn per Numba thread per MPI rank
+- each rank generates its own random points independently
 - each rank uses the threaded Numba kernel locally
 - MPI reduces the local hit counts into a global result
+
+The summary runner (`monte_carlo_pi_parallel_strategies.py`) passes a fixed total `N` to all variants, so comparisons
+across implementations use the same number of samples regardless of how many ranks or threads are active.
 
 ## Jupytext pairing
 
 Create a notebook from one of the percent scripts:
 
 ``` bash
-pixi run python -m jupytext --to ipynb src/section_05_python_array_jobs_parallelism_strategies/monte_carlo_pi_numba_parallel.py
+pixi run python -m jupytext --to ipynb src/section_05_python_array_jobs_parallelism_strategies/ex01_monte_carlo_pi/monte_carlo_pi_numba_parallel.py
 ```
 
 After both files exist, keep them synchronised with:
 
 ``` bash
 pixi run python -m jupytext --sync \
-  src/section_05_python_array_jobs_parallelism_strategies/monte_carlo_pi_numba_parallel.ipynb \
-  src/section_05_python_array_jobs_parallelism_strategies/monte_carlo_pi_numba_parallel.py
+  src/section_05_python_array_jobs_parallelism_strategies/ex01_monte_carlo_pi/monte_carlo_pi_numba_parallel.ipynb \
+  src/section_05_python_array_jobs_parallelism_strategies/ex01_monte_carlo_pi/monte_carlo_pi_numba_parallel.py
 ```
 
 ## Array jobs hook
@@ -148,7 +153,7 @@ pixi run python -m jupytext --sync \
 For a Slurm array job, use the task ID as a per-run seed:
 
 ``` bash
-pixi run python -m section_05_python_array_jobs_parallelism_strategies.monte_carlo_pi_numpy \
+pixi run python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numpy \
   -d 2 \
   -n 200000 \
   -s "${SLURM_ARRAY_TASK_ID}"
