@@ -31,8 +31,8 @@ try:
     from .monte_carlo_pi_common import (
         ExperimentConfig,
         ExperimentResult,
+        build_parser,
         chunk_lengths,
-        parse_config,
         print_results,
         summarise_result,
     )
@@ -40,8 +40,8 @@ except ImportError:
     from monte_carlo_pi_common import (  # type: ignore
         ExperimentConfig,
         ExperimentResult,
+        build_parser,
         chunk_lengths,
-        parse_config,
         print_results,
         summarise_result,
     )
@@ -115,7 +115,21 @@ def run_experiment(config: ExperimentConfig) -> ExperimentResult | None:
 
 
 def main() -> None:
-    config = parse_config("Monte Carlo Pi using hybrid MPI and threaded Numba.")
+    comm = MPI.COMM_WORLD
+    size = comm.Get_size()
+    # -n is samples PER THREAD (matching the C convention).
+    # Total samples = MPI ranks × threads × n.
+    args = build_parser(
+        "Monte Carlo Pi using hybrid MPI and threaded Numba.\n"
+        "-n sets samples PER THREAD; total = MPI ranks × threads × n."
+    ).parse_args()
+    config = ExperimentConfig(
+        d=args.d,
+        n=args.n * args.num_threads * size,
+        num_threads=args.num_threads,
+        seed=args.seed,
+        chunk_size=args.chunk_size,
+    )
     result = run_experiment(config)
     if result is not None:
         print_results(config, [result])

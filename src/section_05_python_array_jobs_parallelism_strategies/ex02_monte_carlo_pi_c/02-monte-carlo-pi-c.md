@@ -57,6 +57,8 @@ samples (288 million in total, since ranks × threads = 144 across the sweep) an
 configuration is noticeably slower, that hints at MPI startup overhead (many small ranks) or NUMA effects from thread
 binding.
 
-Compare the `time[s]` here against the Python/Numba hybrid result from `02-monte-carlo-pi-parallel-strategies.md` for a
-similar sample count: the C binary is typically 3–5× faster because there is no interpreter and the fused inner loop
-keeps every sample in a register — the entire hot path is one xoshiro state update followed by a couple of FMAs.
+Compare the `time[s]` here against the Python/Numba hybrid result from `../ex01_monte_carlo_pi/01-monte-carlo-pi.md` for
+a similar sample count. Both use the same CLI convention: `-n` is samples per thread, so
+`total = MPI ranks × OMP/Numba threads × n`. The C binary is typically 3–5× faster because there is no interpreter and
+the fused inner loop keeps every sample in a register — the entire hot path is one xoshiro state update followed by a
+couple of FMAs.
