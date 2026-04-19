@@ -439,12 +439,17 @@ understand pixi to follow today's exercises.
 
 **Advanced users --- want full control over your own environment?**
 
-Ignore the `direnv allow` prompt. A standard conda `environment.yml` is committed at the repo root. Use `-n` to give the
-environment a name of your choice:
+Ignore the `direnv allow` prompt. Two conda `environment*.yml` files are committed at the repo root. Use `-n` to give
+the environment a name of your choice:
 
 ``` bash
+# Standard environment (CPU-only):
 mamba env create -f environment.yml -n isambard3-workshop -y
 mamba activate isambard3-workshop
+
+# HPC environment (Cray MPICH / MPI support --- required for Section 5 MPI examples):
+mamba env create -f environment_hpc.yml -n isambard3-workshop-hpc -y
+mamba activate isambard3-workshop-hpc
 ```
 
 **On Isambard 3**, the dotfiles install `~/.config/pixi/config.toml` with `detached-environments = true`. Without this,
