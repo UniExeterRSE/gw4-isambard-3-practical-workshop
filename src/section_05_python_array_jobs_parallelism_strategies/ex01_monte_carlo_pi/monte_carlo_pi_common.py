@@ -13,7 +13,7 @@ class ExperimentConfig:
     n: int
     num_threads: int
     seed: int
-    chunk_size: int = 250_000
+    chunk_size: int = 262_144  # 2**18
 
 
 @dataclass(frozen=True)
@@ -128,8 +128,8 @@ def build_parser(description: str) -> argparse.ArgumentParser:
         "--num-samples",
         dest="n",
         type=int,
-        default=200_000,
-        help="Number of Monte Carlo samples.",
+        default=1_048_576,  # 2**20
+        help="Number of Monte Carlo samples per thread.",
     )
     parser.add_argument(
         "-t",
@@ -152,7 +152,7 @@ def build_parser(description: str) -> argparse.ArgumentParser:
         "--chunk-size",
         dest="chunk_size",
         type=int,
-        default=250_000,
+        default=262_144,  # 2**18
         help="Maximum number of points generated per array batch.",
     )
     return parser
@@ -170,7 +170,7 @@ def parse_config(description: str) -> ExperimentConfig:
         raise ValueError("chunk_size must be a positive integer.")
     return ExperimentConfig(
         d=args.d,
-        n=args.n,
+        n=args.n * args.num_threads,
         num_threads=args.num_threads,
         seed=args.seed,
         chunk_size=args.chunk_size,
