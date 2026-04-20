@@ -22,6 +22,7 @@ monte-carlo-pi-numba-chunked = "section_05_python_array_jobs_parallelism_strateg
 monte-carlo-pi-numba-parallel = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_numba_parallel:main"
 monte-carlo-pi-mpi-hybrid = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_mpi_hybrid:main"
 monte-carlo-pi-summary = "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_parallel_strategies:main"
+reduce-mc-pi-results = "section_05_python_array_jobs_parallelism_strategies.ex03_job_array.reduce_results:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -37,6 +38,10 @@ where = ["src"]
 "section_05_python_array_jobs_parallelism_strategies" = ["*.md"]
 "section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi" = ["*.md", "*.sh"]
 "section_05_python_array_jobs_parallelism_strategies.ex02_monte_carlo_pi_c" = ["*.md", "*.c", "*.h", "*.sh"]
+"section_05_python_array_jobs_parallelism_strategies.ex03_job_array" = ["*.md", "*.sh"]
+"section_05_python_array_jobs_parallelism_strategies.ex04_gnu_parallel" = ["*.md", "*.sh"]
+"section_05_python_array_jobs_parallelism_strategies.ex05_mpi4py_futures" = ["*.md", "*.sh"]
+"section_05_python_array_jobs_parallelism_strategies.ex06_multiprocessing" = ["*.md", "*.sh"]
 
 [tool.pixi.workspace]
 authors = ["Kolen Cheung <christian.kolen@gmail.com>"]
