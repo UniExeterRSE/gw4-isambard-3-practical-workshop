@@ -511,3 +511,24 @@ Discussion
 ::: qa-subtitle
 Questions? Anything that did not work, or a tool you use that we have not mentioned?
 :::
+
+## Fallback stack
+
+``` sh
+# setup your PATH
+export PATH="$PATH:${PROJECTDIR}/local/opt/Linux-aarch64/bin"
+export PATH="$PATH:${PROJECTDIR}/local/opt/Linux-aarch64/system/bin"
+export PATH="$PATH:${PROJECTDIR}/local/opt/Linux-aarch64/miniforge3/condabin"
+
+# or more aggressively
+export PATH="${PROJECTDIR}/local/opt/Linux-aarch64/bin:$PATH"
+export PATH="${PROJECTDIR}/local/opt/Linux-aarch64/system/bin:$PATH"
+export PATH="${PROJECTDIR}/local/opt/Linux-aarch64/miniforge3/condabin:$PATH"
+
+# hooking mamba to your shell
+. <(mamba shell hook --shell bash)
+
+# if you're not using pixi,
+# then activate the conda environment for this workshop optionally
+mamba activate ${PROJECTDIR}/local/opt/Linux-aarch64/isambard3-workshop-hpc
+```
