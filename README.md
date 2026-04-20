@@ -322,7 +322,7 @@ Contents:
 - file transfer one-liners: `scp`, `rsync`
 - troubleshooting: terminal emulator compatibility
 - where to look next in the docs
-- support routes: BriCS helpdesk (`isambard-support@exeter.ac.uk`) and UoE RSA (`rsa@exeter.ac.uk`)
+- support routes: BriCS helpdesk (<https://support.isambard.ac.uk/>) and UoE RSE workshop follow-up (`isambard-support@exeter.ac.uk`)
 - feedback: announce that a survey will be sent by email after the workshop (no QR code)
 - open Q&A
 
