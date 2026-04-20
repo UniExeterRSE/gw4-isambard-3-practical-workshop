@@ -9,6 +9,8 @@
 # 10 CPUs allocated; the script reads os.sched_getaffinity(0) to discover them,
 # spawns 10 worker processes (one per CPU), and submits 20 tasks.
 
+module reset
+
 # shellcheck disable=SC2312
 eval "$(pixi shell-hook --environment hpc)"
 
