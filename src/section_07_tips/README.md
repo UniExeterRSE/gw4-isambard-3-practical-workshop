@@ -26,6 +26,7 @@ Point participants at these directives to look up on their own:
 ### Separate stdout and stderr
 
 ``` sh
+#SBATCH --output=hello_world.out
 #SBATCH --error=hello_world.err
 ```
 
