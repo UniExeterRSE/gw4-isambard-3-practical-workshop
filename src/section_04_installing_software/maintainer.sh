@@ -25,5 +25,5 @@ echo "XDG_CONFIG_HOME=${XDG_CONFIG_HOME}"
 cd "${DIR}/../../bootstrap"
 install/bootstrap.sh
 
-mamba env create -f "${DIR}/../../environment_hpc.yml" -p "${__OPT_ROOT}/isambard3-workshop-hpc" -y
+"${MAMBA_ROOT_PREFIX}/bin/mamba" env create -f "${DIR}/../../environment_hpc.yml" -p "${__OPT_ROOT}/isambard3-workshop-hpc" -y
 echo mamba activate "${__OPT_ROOT}/isambard3-workshop-hpc"
