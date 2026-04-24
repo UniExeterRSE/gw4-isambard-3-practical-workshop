@@ -17,7 +17,6 @@ the submit-check-read-output loop
 [Resources]{.card-title}
 
 - [Slurm guide](https://docs.isambard.ac.uk/user-documentation/guides/slurm/)
-- [Job scripts](https://docs.isambard.ac.uk/user-documentation/guides/slurm/#job-scripts)
 - Helpers are in the room --- raise a hand
 :::
 

@@ -16,7 +16,7 @@ and what to do when the work is embarrassingly parallel
 ::: next-steps-card
 [Resources]{.card-title}
 
-- [Slurm arrays](https://docs.isambard.ac.uk/user-documentation/guides/slurm/#job-arrays)
+- [Slurm arrays](https://docs.isambard.ac.uk/user-documentation/guides/slurm/)
 - [GNU parallel manual](https://www.gnu.org/software/parallel/man.html)
 - Helpers are in the room --- raise a hand
 :::
