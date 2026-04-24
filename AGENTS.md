@@ -12,8 +12,8 @@ its “Out of Scope” and per-section TODO lists.
 
 ## Tooling: Pixi + direnv
 
-Environment is managed by [Pixi](https://pixi.prefix.dev) (conda-forge channel). `.envrc` runs `pixi shell-hook`, so with direnv
-enabled the env activates on `cd`. Otherwise use `pixi run <task>` or `pixi shell`.
+Environment is managed by [Pixi](https://pixi.prefix.dev) (conda-forge channel). `.envrc` runs `pixi shell-hook`, so
+with direnv enabled the env activates on `cd`. Otherwise use `pixi run <task>` or `pixi shell`.
 
 The root `pyproject.toml` declares both a PEP 621 project (`isambard3-workshop`) and a Pixi workspace. The project is
 installed editably into the Pixi env, so Python modules under `src/section_*/` are importable by their `section_NN_*`
