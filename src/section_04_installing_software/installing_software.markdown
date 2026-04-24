@@ -424,7 +424,7 @@ A newer approach: project-scoped environments
 
 :::: shell-grid
 ::: shell-text
-[Pixi](https://pixi.sh) is a newer Rust-based package manager from the conda-forge ecosystem. It manages environments
+[Pixi](https://pixi.prefix.dev) is a newer Rust-based package manager from the conda-forge ecosystem. It manages environments
 per project rather than globally. This workshop repo uses pixi + direnv internally.
 
 **Beginners --- just run this once and you are done:**
