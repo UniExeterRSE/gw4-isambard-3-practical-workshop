@@ -49,13 +49,14 @@ The workshop has a solid andragogical foundation:
 
 - It is anchored in authentic HPC work: logging in, submitting jobs, installing software, running parallel jobs, and
   debugging failures.
-- The README identifies a clear adult audience: new, beginner, and intermediate HPC users ([README.md](README.md:8)).
+- The README identifies a clear adult audience: new, beginner, and intermediate HPC users ([README.md](../README.md),
+  line 8).
 - The maintainer notes record actual cohort needs, experience mix, domains, and learning goals
-  ([MAINTAINER.md](MAINTAINER.md:28)). This is a strong ADDIE-style analysis step.
+  ([MAINTAINER.md](../MAINTAINER.md), line 28). This is a strong ADDIE-style analysis step.
 - The course explicitly prefers hands-on active sections and a Present -\> Demo -\> Hands-on -\> Discussion rhythm
-  ([MAINTAINER.md](MAINTAINER.md:15)).
+  ([MAINTAINER.md](../MAINTAINER.md), line 15).
 - Stretch paths are used rather than splitting the room into rigid beginner/advanced tracks
-  ([MAINTAINER.md](MAINTAINER.md:13)).
+  ([MAINTAINER.md](../MAINTAINER.md), line 13).
 - The debugging section is a particularly good example of problem-centred adult learning: learners pick relevant
   failures, form hypotheses, fix scripts, and verify results.
 
@@ -68,7 +69,8 @@ materials less robust if delivered by a new presenter or reused asynchronously.
 
 1.  **Add explicit learner-facing outcomes to every section.** Each section should state what learners will be able to
     do by the end. Use Bloom-level verbs: “submit”, “inspect”, “diagnose”, “choose”, “compare”, “explain”, “adapt”. At
-    the moment, the schedule names topics but does not consistently define outcomes ([README.md](README.md:15)).
+    the moment, the schedule names topics but does not consistently define outcomes ([README.md](../README.md), line
+    15).
 
 E.g. For Section 3 you could have the following as some learner facing outcomes:
 
@@ -90,9 +92,9 @@ E.g. For Section 3 you could have the following as some learner facing outcomes:
 4.  **Strengthen UDL and accessibility.** Provide alternative paths for learners who cannot log in, cannot use VS Code,
     process text visually differently, or need lower cognitive load. The current fallback is mostly “follow along on the
     projected screen”
-    ([src/section_01_welcome_login_overview/00-pre-session.markdown](src/section_01_welcome_login_overview/00-pre-session.markdown:166)),
-    which is useful but limited. It might be worth considering if there are any other routes that could be used? (E.g.
-    pair program with a colleague?)
+    ([src/section_01_welcome_login_overview/00-pre-session.markdown](../src/section_01_welcome_login_overview/00-pre-session.markdown),
+    line 166), which is useful but limited. It might be worth considering if there are any other routes that could be
+    used? (E.g. pair program with a colleague?)
 
 5.  **Make the Section 4 software path less overloaded.** It currently includes modules, installation routes,
     clone/fork, SSH keys, dotfiles, mamba, conda vocabulary, environment creation, Pixi, and fallback stack material.
@@ -114,10 +116,10 @@ E.g. For Section 3 you could have the following as some learner facing outcomes:
     than conventional page navigation with visible next/previous links and a stable menu.
 
 8.  **Add a course feedback plan in the repo.** The course currently says a survey will be emailed after the workshop
-    ([src/section_07_tips/README.md](src/section_07_tips/README.md:109)). A good feedback plan should define what you
-    want to learn, which methods you will use, when feedback will be collected, whether responses are anonymous, how
-    responses will be analysed, and which follow-up actions will be taken. Add a `feedback_plan.md` or a section in
-    `MAINTAINER.md`.
+    ([src/section_07_tips/README.md](../src/section_07_tips/README.md), line 109). A good feedback plan should define
+    what you want to learn, which methods you will use, when feedback will be collected, whether responses are
+    anonymous, how responses will be analysed, and which follow-up actions will be taken. Add a `feedback_plan.md` or a
+    section in `MAINTAINER.md`.
 
 ## Course-Wide Strengths
 
