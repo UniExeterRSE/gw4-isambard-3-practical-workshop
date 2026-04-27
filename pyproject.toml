@@ -63,9 +63,10 @@ PRESENTATION_PORT = "8001"
 sync = { cmd = "jupytext --sync '**/*.ipynb' '**/*.py'", description = "Synchronize ipynb,py pairs using jupytext" }
 monte-carlo-pi-summary = { cmd = "python -m section_05_python_array_jobs_parallelism_strategies.ex01_monte_carlo_pi.monte_carlo_pi_parallel_strategies", cwd = ".", description = "Run the Monte Carlo Pi pipelines." }
 docs = { cmd = "cd src; make all", description = "Make HTMLs." }
+qr-assets = { cmd = "cd src/assets && make all", description = "Generate QR code assets used by the slide sources." }
 serve = { cmd = "python -m http.server $PRESENTATION_PORT --bind 127.0.0.1 --directory src", description = "Serve the presentation.", depends-on = ["docs"] }
-linkcheck = { cmd = "lychee --exclude-loopback --max-redirects 10 -v .", description = "Check links via lychee." }
-linkcheck-except-429 = { cmd = "lychee --accept '100..=299, 429' --exclude-loopback --max-redirects 10 -v .", description = "Check links via lychee, accept 429 (too many requests). Primarily for CI." }
+linkcheck = { cmd = "lychee --exclude-loopback --max-redirects 10 -v .", description = "Check links via lychee.", depends-on = ["qr-assets"] }
+linkcheck-except-429 = { cmd = "lychee --accept '100..=299, 429' --exclude-loopback --max-redirects 10 -v .", description = "Check links via lychee, accept 429 (too many requests). Primarily for CI.", depends-on = ["qr-assets"] }
 format = { depends-on = ["format-c", "format-markdown", "format-md", "format-py", "format-sh", "generate"], description = "Run all formatters and auto-generation scripts." }
 format-c = { cmd = "bash bin/c_formatter.sh bin bootstrap src", description = "Format C files using clang-format." }
 format-markdown = { cmd = "python bin/md_formatter.py '**/*.markdown' -t markdown", description = "Format .markdown files via pandoc." }
