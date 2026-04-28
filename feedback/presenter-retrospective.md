@@ -21,14 +21,10 @@ The timeline of the development effort is worth recording precisely. A first dra
 on 26 March 2026. The repository was created on 9 April, and the decision that materials needed to be built from scratch
 — rather than adapting existing content — was confirmed on 10 April. The workshop ran on 21 April. The effective
 development window was approximately eleven days. This is not a comment on anyone’s individual decisions; it reflects
-the pace at which the event came together and the absence of a standing library of workshop materials to draw from. The
-realisation that new materials were needed coincided with a period of competing project pressure (two concurrent
-projects, each nominally 50% of working time), sick leave, and a family bereavement requiring emergency leave in late
-March and early April. All of this is noted not to assign blame, but to be clear about the conditions under which the
-materials were produced: the timeline was too short for the scope, and placing full responsibility for creating,
-reviewing, and delivering a workshop on a single individual — particularly under those circumstances — was
-disproportionate to the stakes involved. Future workshops should build in a longer lead time, shared authorship, and
-review cycles, so that no individual is in a position where a personal emergency can put the entire delivery at risk.
+the pace at which the event came together and the absence of a standing library of workshop materials to draw from.
+Placing full responsibility for creating, reviewing, and delivering a workshop on a single individual under these
+conditions was disproportionate to the stakes involved. Future workshops should build in a longer lead time, shared
+authorship, and review cycles, so that no single person carries the entire risk.
 
 A secondary factor is a tendency — understandable but worth naming — for the materials to grow in scope when one person
 is both the domain expert and the author with no external brake. Without time for feedback or iteration, it is very
@@ -63,13 +59,11 @@ acknowledge this explicitly:
 Running a single session that tries to serve all three groups simultaneously is structurally difficult and risks
 satisfying none of them well.
 
-There was also at least one participant who expected the session to pause and wait for them individually whenever they
-encountered difficulty. This is understandable frustration, but it is not compatible with a group learning format, and
-it is unfair to the rest of the room. Future workshops should set clearer expectations in the pre-workshop
-communication: the session runs at a group pace, helpers circulate for individual support, and participants who
-encounter blocking issues during a section should raise a hand for helper support rather than stopping the presenter. A
-prerequisite check — confirming that participants have completed the setup steps and have a working login before
-arriving — would also reduce the likelihood of this situation arising.
+The pre-workshop communication should set clear expectations: the session runs at group pace, helpers circulate for
+individual support, and participants who encounter blocking issues during a section should raise a hand for helper
+support rather than stopping the presenter. A prerequisite check — confirming that participants have completed the setup
+steps and have a working login before arriving — would significantly reduce the likelihood of individual blockages
+disrupting the room.
 
 ## Delivery: What Happened on the Day
 
@@ -105,12 +99,11 @@ Establishing this “single onboarding link” and walking everyone through it i
 should be a standard step.
 
 The website format itself is worth revisiting. The materials were deliberately designed not to resemble a documentation
-site, partly for political reasons (the official Isambard 3 documentation is maintained separately and there is a desire
-to avoid duplication or conflict with it). However, a documentation-style structure — such as JupyterBook, as used by
-the Centre for Reproducible Research — would make the materials significantly easier to navigate, both for participants
-during the session and for anyone returning to the materials afterwards. It is worth asking whether a dual-compilation
-approach (the same source rendered as both a slide deck for live delivery and a structured web page for self-study) is
-achievable within the existing toolchain.
+site, partly to avoid duplication with the official Isambard 3 documentation. However, a documentation-style structure —
+such as JupyterBook, as used by the Centre for Reproducible Research — would make the materials significantly easier to
+navigate, both for participants during the session and for anyone returning to the materials afterwards. It is worth
+asking whether a dual-compilation approach (the same source rendered as both a slide deck for live delivery and a
+structured web page for self-study) is achievable within the existing toolchain.
 
 ## Coordination: Helpers and Stakeholders
 
@@ -141,17 +134,12 @@ understanding of what to teach — requires sustained time investment that none 
 A lightweight steering group or committee with representation from BriCS and each university’s RSE team would help, but
 only if all parties genuinely have time allocated for it rather than treating it as an add-on to already full schedules.
 
-**The documentation politics create a structural problem.** A deliberate decision was made to design the workshop
-materials so that they do not look like a documentation site, partly to avoid conflict with the official Isambard 3
-documentation. At the same time, the official documentation has gaps, and the workshop fills some of those gaps with
-better or more opinionated guidance. This creates tension: workshop materials that are hard to navigate because they are
-designed not to resemble documentation, teaching practices that diverge from the official docs in ways that are not
-always acknowledged, and no clear path for workshop-developed content to feed back into the official documentation.
-
-Resolving this requires a clearer agreement on scope: what belongs in the official documentation, what belongs in
-workshop materials, and how the two relate. The access request to contribute to the official documentation repository
-has been agreed in principle but not yet acted on; resolving this would allow well-tested workshop content to improve
-the official docs directly, reducing the duplication problem.
+**The relationship between workshop materials and official documentation needs clarifying.** The workshop materials were
+deliberately designed to complement rather than duplicate the official Isambard 3 documentation. In practice, the
+official documentation has gaps that the workshop fills with more specific or opinionated guidance. This creates a
+structural tension: workshop materials that are harder to navigate because they avoid the documentation format, and
+teaching practices that cannot easily feed back into the official docs. Establishing a clearer agreement on scope — what
+belongs in the documentation, what belongs in workshop materials, and how the two relate — would benefit both.
 
 **The format dimension is worth revisiting.** The current workshop is a single format — a structured, scheduled, group
 session. Other formats may be more appropriate for different needs: a shorter, drop-in office-hours session for
@@ -195,6 +183,5 @@ monolithic workshop, would allow the right format to be matched to the right aud
     and advanced sessions alongside the standard workshop. The audience exists; the format may need to be matched more
     carefully to their needs.
 
-10. **Establish a documentation feedback loop.** Resolve the access question for the official documentation repository.
-    Where workshop content represents an improvement on or addition to the official docs, it should flow back into them
-    rather than existing in parallel.
+10. **Establish a documentation feedback loop.** Work towards a formal agreement on how workshop-developed content can
+    flow back into the official documentation, reducing duplication and ensuring improvements are preserved.
