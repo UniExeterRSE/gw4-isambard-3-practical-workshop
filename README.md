@@ -24,6 +24,12 @@ notes.
 | 6   | Debugging Failed Jobs                                      | Active  | 15 min   | 12:00–12:15 |
 | 7   | Tips, Help, Wrap-Up, Q&A & Feedback                        | Passive | 15 min   | 12:15–12:30 |
 
+## Workshop Presentations
+
+- [BriCS Isambard 3 Introduction
+  (PDF)](https://github.com/UniExeterRSE/gw4-isambard-3-practical-workshop/releases/download/v2026.04.21-rc1/2026-04-21_Exeter_Isambard3.pdf)
+  — slides presented by BriCS staff in Section 1
+
 ## Pre-Workshop Setup
 
 Complete these three steps before arriving:

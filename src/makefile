@@ -24,7 +24,7 @@ assets:  ## Build assets
 
 tree: index.html  ## Build the index.html tree
 index.md: html
-	python -c 'import pathlib; print("\n".join(sorted(f"- [{p}]({p})" for p in pathlib.Path(".").rglob("*.html") if p.stem not in {"index", "template"})))' > $@
+	python -c 'import pathlib; slides = "\n".join(sorted(f"- [{p}]({p})" for p in pathlib.Path(".").rglob("*.html") if p.stem not in {"index", "template"})); print(f"## Presentations\n\n- [BriCS Isambard 3 Introduction (PDF)](https://github.com/UniExeterRSE/gw4-isambard-3-practical-workshop/releases/download/v2026.04.21-rc1/2026-04-21_Exeter_Isambard3.pdf)\n\n## Slides\n\n{slides}")' > $@
 index.html: index.md
 	pandoc -s -o $@ $< -M title="Isambard 3 Practical Workshop"
 
